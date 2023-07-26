@@ -28,7 +28,7 @@ SECRET_KEY = get_secret("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['lucy-proto.deerfield-ma.org', 'localhost']
+ALLOWED_HOSTS = ['lucy-proto.deerfield-ma.org', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -79,8 +79,14 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'lucy_db',
+        'USER': 'lucy_db_user',
+        'PASSWORD': get_secret("DB_PASS"),
+        'HOST': '127.0.0.1',
+        'PORT': '5432',        
     }
 }
 
