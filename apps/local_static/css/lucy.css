@@ -4,3 +4,7 @@
 	font-size: 3em;
 	line-height: .25em;
 }
+
+.picture {
+	max-width: 600px;
+}

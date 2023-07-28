@@ -1,4 +1,5 @@
 {% load static %}
+{% load settings_values %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +12,15 @@
 </head>
 <body>
     <h1 class="test">People</h1>
-    <p>We are basically configured.</p>
+    <p>We are basically configured.
+    <div >
+        <img class="picture"
+        src="{% asset_path %}people/images/bill-swire.jpg" alt="test portrait">
+    </div>    
+    <p>Bill Swire from PUR -- who looks like Justin Timberlake</p>
+    <p>ASSET_PATH: {% asset_path %}</p>
+    
+    </p>
+
 </body>
 </html>

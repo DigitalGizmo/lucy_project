@@ -128,8 +128,13 @@ USE_TZ = True
 STATICFILES_DIRS = [BASE_DIR / 'apps' / 'local_static']
 
 STATIC_URL = 'static/'
-
 STATIC_ROOT = BASE_DIR.parents[0] / "lucy-static"
+
+# MEDIA_URL = 'media/'
+# MEDIA_ROOT = BASE_DIR.parents[0] / "lucy-media"
+
+# Custom setting
+ASSET_PATH = BASE_DIR.parents[0] / "lucy-assets"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
