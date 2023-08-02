@@ -35,6 +35,8 @@ ALLOWED_HOSTS = ['lucy-proto.deerfield-ma.org', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'apps.people.apps.PeopleConfig',
+    'apps.moments.apps.MomentsConfig',
+    'apps.sitewide.apps.SitewideConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

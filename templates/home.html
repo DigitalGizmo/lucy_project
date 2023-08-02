@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% load settings_values %}
+
+
+{% block page %}
+  <h1 class="test">Home Page</h1>
+  <p><a href="{% url 'people:menu' %}">People</a></p>
+  
+ 
+
+{% endblock page %}
