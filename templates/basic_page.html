@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block basic_page %}
+<a id="top"></a>
+<header id="header">
+    <h3><a href="{% url 'sitewide:home' %}">Lucy Terry Site</a></h3>
+    <nav>
+        <ul>
+            <li><a href="#">nav 1</a></li>
+			<li><a href="#">nav 2</a></li>
+			<li><a href="#">nav 3</a></li>
+		</ul>
+	</nav>
+    <h1 class="test">{% block page_title %} Title{% endblock %}</h1>
+</header>
+
+<section class="wrapper">
+	<p class="breadcrumbs">
+		{% block breadcrumbs %}
+
+		{% endblock %}
+	</p>
+	{% block content %}
+
+	Content goes here
+
+	{% endblock %}
+</section><!-- /wrapper -->
+
+{% endblock basic_page %}
+
+{% block slim_pop %}
+{% endblock slim_pop %}

@@ -3,10 +3,10 @@
 {% load settings_values %}
 
 
-{% block page %}
+{% block basic_page %}
   <h1 class="test">Home Page</h1>
   <p><a href="{% url 'moments:proof' %}">Moment proof of concept</a></p>
   <p><a href="{% url 'people:menu' %}">People</a></p>
 
 
-{% endblock page %}
+{% endblock basic_page %}

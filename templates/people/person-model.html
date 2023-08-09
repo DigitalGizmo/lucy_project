@@ -1,11 +1,14 @@
-{% extends "base.html" %}
+{% extends "basic_page.html" %}
 {% load static %}
 {% load settings_values %}
 
+{% block page_title %}Justin Timberlake{% endblock %}
 
-{% block page %}
-    <h1 class="test">People</h1>
-    <p>We are basically configured.
+{% block breadcrumbs %}
+<a href="{% url 'people:menu' %}">People</a> | This thing
+{% endblock %}
+
+{% block content %}
     <div >
         <img class="picture"
         src="{% asset_path %}/people/images/bill-swire.jpg" alt="test portrait">
@@ -14,5 +17,5 @@
     <p>ASSET_PATH: {% asset_path %}</p>
     <p>image path: {% asset_path %}/people/images/bill-swire.jpg</p>
     
-    </p>
-{% endblock page %}
+
+{% endblock content %}

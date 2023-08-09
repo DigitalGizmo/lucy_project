@@ -1,10 +1,14 @@
-{% extends "base.html" %}
+{% extends "basic_page.html" %}
 {% load static %}
 {% load settings_values %}
 
+{% block page_title %}People Menu{% endblock %}
 
-{% block page %}
-  <h1 class="test">People Menu</h1>
+{% block breadcrumbs %}
+People
+{% endblock %}
+
+{% block content %}
   <p><a href="{% url 'people:person-model' %}">Model Person</a></p>
   
   <p>list from database:</p>
@@ -17,4 +21,4 @@
   {% endfor %}
   </ul>  
 
-{% endblock page %}
+{% endblock content %}
