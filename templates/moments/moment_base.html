@@ -1,0 +1,27 @@
+{% extends "basic_page.html" %}
+{% load static %}
+
+
+
+{% block content %}
+<a id="top"></a>
+<header id="header">
+    <nav>
+        <ul>
+            <li><a href="#">Moment 1</a></li>
+			<li><a href="{% url 'moments:community_title' %}">Comunity</a></li>
+			<li><a href="#">Moment 3</a></li>
+		</ul>
+	</nav>
+</header>
+
+<section >
+
+	{% block moment %}
+
+	moment goes here
+
+	{% endblock moment %}
+</section><!-- / -->
+
+{% endblock content %}
