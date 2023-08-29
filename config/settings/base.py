@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['lucy-proto.deerfield-ma.org', 'localhost', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.evidence.apps.EvidenceConfig',
     'apps.people.apps.PeopleConfig',
     'apps.moments.apps.MomentsConfig',
     'apps.sitewide.apps.SitewideConfig',

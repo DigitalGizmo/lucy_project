@@ -8,3 +8,20 @@
 .picture {
 	max-width: 600px;
 }
+
+
+.moment-nav {
+
+}
+
+.global-nav ul {
+	list-style: none;
+	padding: 0;
+}
+
+.global-nav ul li {
+	background-color: blanchedalmond;
+	display: inline-block;
+	font-size: .8em;
+	padding: 0.25em;
+}

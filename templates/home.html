@@ -4,9 +4,14 @@
 
 
 {% block sub_base %}
-  <h1 class="test">Home Page</h1>
-  <p><a href="{% url 'moments:menu' %}">Moments</a></p>
-  <p><a href="{% url 'people:menu' %}">People</a></p>
-
+  <h1 class="test">Lucy Terry Prince</h1>
+  <ul>
+      <li><a href="{% url 'moments:menu' %}">Moments</a></li>
+      <li><a href="{% url 'people:menu' %}">Who Else?</a></li>
+      <li><a href="#">How Do We Know?</a></li>
+      <li><a href="#">Topics &amp; Ideas</a></li>
+      <li><a href="#">Where in the World?</a></li>
+      <li><a href="#">Myths &amp; Assumptions</a></li>
+  </ul>
 
 {% endblock sub_base %}
