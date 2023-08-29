@@ -2,17 +2,14 @@
 {% load static %}
 {% load settings_values %}
 
-{% block page_title %}Community Within Community{% endblock %}
 
 {% block moment %}
 
-<div class="caption-panel">
-  <div class="title-panel">
-    
-  </div>
-  <div class="xyz">
-    <p>Lucy and Abijah walk down main street</p>
-  </div>
+<div>
+  <h1 class="test">{% block page_title %} Title{% endblock %}</h1>
+
+  <p>Lucy and Abijah walk down main street</p>
+
   <p><a href="{% url 'moments:proof' %}">Explore this moment...</a></p>
 </div>
 

@@ -1,11 +1,14 @@
-{% extends "basic_page.html" %}
+{% extends "base.html" %}
 {% load static %}
 
-
-
-{% block content %}
-<a id="top"></a>
+{% block sub_base %}
 <header id="header">
+    <h3><a href="{% url 'sitewide:home' %}">Lucy Terry Site</a></h3>
+	{% include "_main_nav.html" %}
+
+</header>
+
+<header>
     <nav>
         <ul>
             <li><a href="#">Moment 1</a></li>
@@ -24,4 +27,4 @@
 	{% endblock moment %}
 </section><!-- / -->
 
-{% endblock content %}
+{% endblock sub_base %}

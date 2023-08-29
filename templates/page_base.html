@@ -1,18 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block basic_page %}
-<a id="top"></a>
+{% block sub_base %}
 <header id="header">
     <h3><a href="{% url 'sitewide:home' %}">Lucy Terry Site</a></h3>
-    <nav>
-        <ul>
-            <li><a href="{% url 'moments:menu' %}">Moments</a></li>
-			<li><a href="{% url 'people:menu' %}">People</a></li>
-			<li><a href="#">nav 3</a></li>
-		</ul>
-	</nav>
-    <h1 class="test">{% block page_title %} Title{% endblock %}</h1>
+
+	{% include "_main_nav.html" %}
+
+	<h1 class="test">{% block page_title %} Title{% endblock %}</h1>
 </header>
 
 <section class="wrapper">
@@ -28,7 +23,7 @@
 	{% endblock %}
 </section><!-- /wrapper -->
 
-{% endblock basic_page %}
+{% endblock sub_base %}
 
 {% block slim_pop %}
 {% endblock slim_pop %}
