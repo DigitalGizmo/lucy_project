@@ -88,22 +88,29 @@ a:visited {
 	}
 }
 
-.moment-frame div.illustration { /* displays less than 800px */
+/* .moment-frame div.illustration { 
+	grid-column: 1;
+	text-align: center;
+} */
+
+/* Don changing the enclosing div from .moment-frame to 
+.image-panel on all div.illustration styles */
+.image-panel div.illustration { /* displays less than 800px */
 	grid-column: 1;
 	text-align: center;
 }
 
-.moment-frame div.illustration img {
+.image-panel div.illustration img {
 	height: auto;
 	max-width: 100vw;	
 }
 @media screen and (min-width: 800px) { /* displays larger than 800px */
-	.moment-frame div.illustration {
+	.image-panel div.illustration {
 		height: 100vh;
 		max-width: 100%;
 		grid-column: 1;		
 	}
-	.moment-frame div.illustration img {
+	.image-panel div.illustration img {
 		height: 100vh;
 		max-width: 100%;	
 	}
