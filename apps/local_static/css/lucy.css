@@ -3,7 +3,12 @@
 /*-- ---------------- --*/
 
 body {
-	padding: 3%;
+	margin: 0;
+}
+
+header#header {
+	border-bottom: 1px solid lightgrey;
+	padding: 0 1em;
 }
 
 h1, h2, h3, h4 {
@@ -45,12 +50,17 @@ a:visited {
 	padding: 0.25em;
 }
 
-.moment-nav ul {
+.moment-nav {/* for mini-nav */
+	text-align: center;
+}
+
+.moment-nav nav ul {
 	list-style: none;
+	margin: 0;
 	padding: 0;
 }
 
-.moment-nav ul li {
+.moment-nav nav ul li {
 	background-color: #f2f2f2;
 	display: inline-block;
 	font-size: .8em;
@@ -64,6 +74,83 @@ a:visited {
 /*-- ---------------- --*/
 /*--   MOMENT BASICS  --*/
 /*-- ---------------- --*/
+
+/*-- Moment Title Frames --*/
+
+.moment-title, .moment-wrapper {
+	height: 100vh;
+	position: relative;
+	text-align: center;
+}
+
+.title-community {
+	background-image: url('http://lucy-proto.deerfield-ma.org/assets/moments/images/community/02-dawn-house-color.jpg');
+}
+
+.moment-title h1 {
+	color: white;
+	margin: 0 0 1em 0;
+	text-shadow: 2px 2px 2px #333;
+}
+
+@media screen and (min-width: 800px) { /* displays larger than 800px */
+	.moment-title h1 {
+		margin: 0 0 1em 0;
+		padding-top: 10%;
+	}
+}
+
+.moment-title-intro {
+	background-color: white;
+	border: 1px solid lightgrey;
+	box-shadow: 2px 2px 2px #333;
+	font-size: 1.2em;
+	margin: auto;
+	opacity: 0.8;
+	padding: 2em;
+	width: 40vw;
+}
+
+.moment-title-intro p.story {
+	font-style: italic;
+}
+
+nav.moment-options ul {
+	list-style: none;
+}
+
+nav.moment-options ul li a:link {
+	color: white;
+}
+
+nav.moment-options ul li a:visited {
+	color: lightgrey;
+}
+
+nav.moment-options ul li a:hover {
+	color: orange;
+}
+
+nav.moment-options ul li.prev-moment {
+	left: 6px;
+	position: absolute;
+	top: 30%;
+}
+
+nav.moment-options ul li.next-moment {
+	right: 6px;
+	position: absolute;
+	top: 30%;
+}
+
+nav.moment-options ul li.this-moment {
+	position: absolute;
+	bottom: 30vh;
+	left: 50%;
+}
+
+/*-- Moment Story Frames --*/
+
 .moment-wrapper {
 
 }
