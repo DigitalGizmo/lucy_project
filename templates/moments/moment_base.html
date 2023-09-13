@@ -6,10 +6,7 @@
     <h3><a href="{% url 'sitewide:home' %}">Lucy Terry Prince</a></h3>
 	{% include "_main_nav.html" %}
 
-</header>
-
-<header class="moment-nav">
-    <nav>
+    <nav class="moment-nav">
         <ul>
             <li><a href="#">Sold Out of Africa</a></li>
 			<li><a href="#">For Sale Again</a></li>
@@ -28,13 +25,11 @@
 	</nav>
 </header>
 
-<section >
 
-	{% block moment %}
+{% block moment %}
 
-	moment goes here
+moment goes here
 
-	{% endblock moment %}
-</section><!-- / -->
+{% endblock moment %}
 
 {% endblock sub_base %}
