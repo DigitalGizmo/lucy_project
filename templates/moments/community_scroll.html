@@ -14,11 +14,7 @@
 -->
 <section
   x-data="{
-    fixedSquare: false,
     imageIndex: 0,
-    scrollNumber: 0,
-    stopPoint: $refs.stop.offsetTop,
-    startPoint: $refs.start.offsetTop,
     images: [
       '02-dawn-house-color',
       '03-candle-color',
@@ -26,46 +22,46 @@
       '05-lucy-hearth'
     ],
   }"
-  @scroll.window="
-    scrollNumber = window.pageYOffset,
-    fixedSquare = (scrollNumber > startPoint && scrollNumber < stopPoint) ? true : false
-    imageIndex = (scrollNumber > startPoint && scrollNumber < stopPoint) ? 1 : 0
-  "
+
 >
 
-  <div id="image-sequence-not-used-yet" class="image-panel"> 
+  <div class="image-panel"> 
     <div class="image-panel-outer-div">
-      <div>
-        <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`"/>
-        
+      <div x-show="imageIndex == 0" 
+      >
+        <!-- <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`"/> -->
+        <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/02-dawn-house-color.jpg`"/>
       </div>
-      <p><span x-text="scrollNumber"></span> | 
-        <span x-text="fixedSquare"></span></p>
+      <div x-show="imageIndex == 1" 
+      >
+      
+        <!-- <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`"/> -->
+        <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/03-candle-color.jpg`"/>
+      </div>
+      <p>More <span x-text="imageIndex"></span></p>
     </div><!-- /image-panel-outer-div -->
   </div><!-- /image-panel -->
 
 
   <div class="moment-frames">
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
 
-    <div class="frame1">
+    <div class="frame1"
+      x-intersect.margin.-200px="imageIndex = 0"
+    >
       <article class="story">
-        <p>In colonial New England, work days for enslaved people began long before daybreak — long before their enslavers
+        <p>Enter=0 Dark. In colonial New England, work days for enslaved people began long before daybreak — long before their enslavers
         got up to begin their own work days.</p>      
       </article>
-
-      <aside class="more">
-        <h4>More</h4>
-        <ul>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-        </ul>
-      </aside>
     </div><!-- Frame1 : END -->
 
-    <div class="frame2" x-ref="start">
+    <div class="frame2" 
+    x-intersect.margin.-100px="imageIndex = 1"
+    >
       <article class="story">
-        <p>While Ebenezer and Abigail Wells continue to sleep in their comfortable bed downstairs, Lucy arises from her straw-filled mattress in the garret and lights a candle so that she can see to dress for the day.</p>
+        <p>Enter=1 Candle. While Ebenezer and Abigail Wells continue to sleep in their comfortable bed downstairs, Lucy arises from her straw-filled mattress in the garret and lights a candle so that she can see to dress for the day.</p>
       </article>
 
       <aside class="more">
@@ -78,9 +74,11 @@
       </aside>
     </div><!-- Frame2 : END -->
 
-    <div class="frame3" x-ref="stop">
+    <div class="frame3" 
+    x-intersect.margin.-100px="imageIndex = 2"
+    >
       <article class="story">
-        <p>Cesar, sleeping on another garret mattress, also awakens and dresses. Lucy and Cesar slip quietly down the stairs to the kitchen.</p>
+        <p>Enter= 3 Cutaway. Cesar, sleeping on another garret mattress, also awakens and dresses. Lucy and Cesar slip quietly down the stairs to the kitchen.</p>
       </article>
 
       <aside class="more">
@@ -93,9 +91,11 @@
       </aside>
     </div><!-- Frame3 : END -->
 
-    <div class="frame4">
+    <div class="frame4"
+    x-intersect.margin.-100px="imageIndex = 3"
+    >
       <article class="story">
-        <p>There, Cesar builds a new fire on the embers remaining from the night before, while Lucy begins to prepare breakfast for the Wells. She and Cesar will eat later.</p>
+        <p>Enter=3 B&W Hearth. There, Cesar builds a new fire on the embers remaining from the night before, while Lucy begins to prepare breakfast for the Wells. She and Cesar will eat later.</p>
       </article>
 
       <aside class="more">
