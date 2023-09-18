@@ -12,15 +12,35 @@
     <p>Scroll down to begin...</p>
   </div>
 -->
+<section
+  x-data="{
+    fixedSquare: false,
+    imageIndex: 0,
+    scrollNumber: 0,
+    stopPoint: $refs.stop.offsetTop,
+    startPoint: $refs.start.offsetTop,
+    images: [
+      '02-dawn-house-color',
+      '03-candle-color',
+      '04-house-cutaway-color',
+      '05-lucy-hearth'
+    ],
+  }"
+  @scroll.window="
+    scrollNumber = window.pageYOffset,
+    fixedSquare = (scrollNumber > startPoint && scrollNumber < stopPoint) ? true : false
+    imageIndex = (scrollNumber > startPoint && scrollNumber < stopPoint) ? 1 : 0
+  "
+>
 
   <div id="image-sequence-not-used-yet" class="image-panel"> 
     <div class="image-panel-outer-div">
       <div>
-        <img src="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/02-dawn-house-color.jpg"/>
+        <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`"/>
+        
       </div>
-  <!--<div>
-        <img src="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/03-candle-color.jpg"/>
-      </div> -->
+      <p><span x-text="scrollNumber"></span> | 
+        <span x-text="fixedSquare"></span></p>
     </div><!-- /image-panel-outer-div -->
   </div><!-- /image-panel -->
 
@@ -43,7 +63,7 @@
       </aside>
     </div><!-- Frame1 : END -->
 
-    <div class="frame2">
+    <div class="frame2" x-ref="start">
       <article class="story">
         <p>While Ebenezer and Abigail Wells continue to sleep in their comfortable bed downstairs, Lucy arises from her straw-filled mattress in the garret and lights a candle so that she can see to dress for the day.</p>
       </article>
@@ -58,7 +78,7 @@
       </aside>
     </div><!-- Frame2 : END -->
 
-    <div class="frame3">
+    <div class="frame3" x-ref="stop">
       <article class="story">
         <p>Cesar, sleeping on another garret mattress, also awakens and dresses. Lucy and Cesar slip quietly down the stairs to the kitchen.</p>
       </article>
@@ -148,5 +168,6 @@
       </aside>
     </div><!-- Frame8 : END -->
 
+  </section>
 
 {% endblock moment %}

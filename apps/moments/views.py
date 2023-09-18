@@ -8,7 +8,7 @@ class MomentListView(TemplateView):
     template_name = 'moments/moment_list.html'
 
 class MomentTitlelView(TemplateView):
-    template_name = "moments/moment_title.html"
+    template_name = "moments/community.html"
 
 class MomentTemplatelView(TemplateView):
-    template_name = "moments/proof.html"
+    template_name = "moments/community_scroll.html"

@@ -6,6 +6,6 @@ app_name="moments"
 
 urlpatterns = [
     path("", views.MomentListView.as_view(), name="menu"),
-    path("community-title", views.MomentTitlelView.as_view(), name="community_title"),
-    path("proof", views.MomentTemplatelView.as_view(), name="proof"),
+    path("community", views.MomentTitlelView.as_view(), name="community"),
+    path("community-scroll", views.MomentTemplatelView.as_view(), name="community_scroll"),
 ]
