@@ -13,6 +13,7 @@
   </div>
 -->
 <section
+  class="moment-scroll"
   x-data="{
     imageIndex: 0,
     images: [
@@ -27,19 +28,21 @@
 
   <div class="image-panel"> 
     <div class="image-panel-outer-div">
-      <div x-show="imageIndex == 0" 
+      <div x-show="imageIndex % 2 === 0" 
+        x-transition.opacity.duration.800ms
       >
-        <!-- <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`"/> -->
-        <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/02-dawn-house-color.jpg`"/>
+        <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`"/>
+        <!-- <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/02-dawn-house-color.jpg`"/> -->
       </div>
-      <div x-show="imageIndex == 1" 
+      <div x-show="imageIndex  % 2 !== 0" 
+        x-transition.opacity.duration.800ms
       >
       
-        <!-- <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`"/> -->
-        <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/03-candle-color.jpg`"/>
+        <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`"/>
+        <!-- <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/03-candle-color.jpg`"/> -->
       </div>
       <p>More <span x-text="imageIndex"></span></p>
-    </div><!-- /image-panel-outer-div -->
+    </div> <!-- /image-panel-outer-div -->
   </div><!-- /image-panel -->
 
 

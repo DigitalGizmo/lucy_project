@@ -164,6 +164,10 @@ nav.moment-options ul li.this-moment {
 
 /*-- Moment Story Frames --*/
 
+.moment-scroll {
+	position: relative;
+}
+
 /* the images */
 .image-panel {
 	margin-top: 138px;
@@ -174,8 +178,9 @@ nav.moment-options ul li.this-moment {
 	position: fixed;
 }
 
+/* New that this is absolute rather than static -DB */
 .image-panel div.image-panel-outer-div div {
-	position: static;
+	position: absolute;
 }
 
 .image-panel div.image-panel-outer-div div img { /* displays less than 800px */
