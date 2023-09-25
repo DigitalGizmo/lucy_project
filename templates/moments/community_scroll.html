@@ -23,9 +23,7 @@
       '05-lucy-hearth'
     ],
   }"
-
 >
-
   <div class="image-panel"> 
     <div class="image-panel-outer-div">
       <div x-show="imageIndex % 2 === 0" 
@@ -41,134 +39,66 @@
         <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`"/>
         <!-- <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/03-candle-color.jpg`"/> -->
       </div>
-      <p>More <span x-text="imageIndex"></span></p>
+      <aside class="more">
+        <h4>More</h4>
+        <!-- <ul>
+          <li><a href="#">link</a></li>
+          <li><a href="#">link</a></li>
+          <li><a href="#">link</a></li>
+        </ul> -->
+      </aside>
     </div> <!-- /image-panel-outer-div -->
   </div><!-- /image-panel -->
 
-
   <div class="moment-frames">
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
 
-    <div class="frame1"
-      x-intersect.margin.-200px="imageIndex = 0"
-    >
+    <div x-intersect.margin.-100px="imageIndex = 0">
       <article class="story">
         <p>Enter=0 Dark. In colonial New England, work days for enslaved people began long before daybreak — long before their enslavers
         got up to begin their own work days.</p>      
       </article>
     </div><!-- Frame1 : END -->
 
-    <div class="frame2" 
-    x-intersect.margin.-100px="imageIndex = 1"
-    >
+    <div x-intersect.margin.-100px="imageIndex = 1">
       <article class="story">
         <p>Enter=1 Candle. While Ebenezer and Abigail Wells continue to sleep in their comfortable bed downstairs, Lucy arises from her straw-filled mattress in the garret and lights a candle so that she can see to dress for the day.</p>
       </article>
-
-      <aside class="more">
-        <h4>More</h4>
-        <ul>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-        </ul>
-      </aside>
     </div><!-- Frame2 : END -->
 
-    <div class="frame3" 
-    x-intersect.margin.-100px="imageIndex = 2"
-    >
+    <div x-intersect.margin.-100px="imageIndex = 2">
       <article class="story">
         <p>Enter= 3 Cutaway. Cesar, sleeping on another garret mattress, also awakens and dresses. Lucy and Cesar slip quietly down the stairs to the kitchen.</p>
       </article>
-
-      <aside class="more">
-        <h4>More</h4>
-        <ul>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-        </ul>
-      </aside>
     </div><!-- Frame3 : END -->
 
-    <div class="frame4"
-    x-intersect.margin.-100px="imageIndex = 3"
-    >
+    <div x-intersect.margin.-100px="imageIndex = 3">
       <article class="story">
         <p>Enter=3 B&W Hearth. There, Cesar builds a new fire on the embers remaining from the night before, while Lucy begins to prepare breakfast for the Wells. She and Cesar will eat later.</p>
       </article>
-
-      <aside class="more">
-        <h4>More</h4>
-        <ul>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-        </ul>
-      </aside>
     </div><!-- Frame4 : END -->
 
-    <div class="frame5">
+    <div >
       <article class="story">
         <p>Lucy cracks several eggs and places a pot of baked beans at the front of the fire to reheat. She also hangs a pot of water over the fire to boil for tea and puts a jug of apple cider on the table. Finally, she sets out plates, cups, and tableware for the Wells.</p>
       </article>
-
-      <aside class="more">
-        <h4>More</h4>
-        <ul>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-        </ul>
-      </aside>
     </div><!-- Frame5 : END -->
 
-    <div class="frame6">
+    <div >
       <article class="story">
         <p>Having renewed the fire, Cesar goes outside with a bucket of cracked corn to feed the chickens.</p>
       </article>
-
-      <aside class="more">
-        <h4>More</h4>
-        <ul>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-        </ul>
-      </aside>
     </div><!-- Frame6 : END -->
 
-    <div class="frame7">
+    <div >
       <article class="story">
         <p>Night has fallen and Lucy continues to work, cleaning up the dinner dishes by candlelight. Cesar has returned from a day of work harvesting crops for a neighbor of the Wells — Ebenezer has rented out Cesar’s labor for cash.</p>
       </article>
-
-      <aside class="more">
-        <h4>More</h4>
-        <ul>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-        </ul>
-      </aside>
     </div><!-- Frame7 : END -->
 
-    <div class="frame8">
+    <div >
       <article class="story">
         <p>Cesar stokes and banks the fire for the night and then prepares to go out, this time on an errand of his own. He plans to meet one of his friends for a walk — she is waiting for him in the yard behind the Wells house.</p>
       </article>
-
-      <aside class="more">
-        <h4>More</h4>
-        <ul>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-        </ul>
-      </aside>
     </div><!-- Frame8 : END -->
 
   </section>
