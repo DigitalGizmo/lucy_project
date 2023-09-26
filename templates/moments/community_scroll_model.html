@@ -1,0 +1,139 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Alpine Plugin, core -->
+    <script defer="" src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+	<link rel="stylesheet" href="/static/css/lucy.css" type="text/css" media="all">
+
+    <title>Lucy Terry Prince</title>
+</head>
+<body>
+    
+<header id="header">
+    <h3><a href="/">Lucy Terry Prince</a></h3>
+	<nav class="global-nav">
+    <ul>
+        <li><a href="/moments/">Moments</a></li>
+        <li><a href="/people/">Who Else?</a></li>
+        <li><a href="/evidence/">How Do We Know?</a></li>
+        <li><a href="#">Topics &amp; Ideas</a></li>
+        <li><a href="#">Where in the World?</a></li>
+        <li><a href="#">Myths &amp; Assumptions</a></li>
+    </ul>
+</nav>
+
+
+    <nav class="moment-nav">
+        <ul>
+            <li><a href="#">Sold Out of Africa</a></li>
+			<li><a href="#">For Sale Again</a></li>
+			<li><a href="#">A Strange New Life</a></li>
+			<li><a href="#">Enslaved at the Wells’ House</a></li>
+			<li><a href="#">Joining the Church</a></li>
+			<li><a href="#">Singer of History</a></li>
+			<li><a href="#">Engaging With the Community</a></li>
+			<li><a href="/moments/community">Community Within Community</a></li>
+			<li><a href="#">A Fruitful Union</a></li>
+			<li><a href="#">Sons of the Revolution</a></li>
+			<li><a href="#">Living on the Frontier</a></li>
+			<li><a href="#">Fighting in Court</a></li>
+			<li><a href="#">Returning to Deerfield</a></li>
+		</ul>
+	</nav>
+</header>
+
+
+
+
+<!--
+   <div class="title-panel">
+    <h1>Community Within Community</h1>
+    <p>Scroll down to begin...</p>
+  </div>
+-->
+<section class="moment-scroll" x-data="{
+    imageIndex: 0,
+    images: [
+      '02-dawn-house-color',
+      '03-candle-color',
+      '04-house-cutaway-color',
+      '05-lucy-hearth'
+    ],
+  }">
+  <div class="image-panel"> 
+    <div class="image-panel-outer-div">
+      <div>
+        <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/02-dawn-house-color.jpg`"/>
+      </div>
+      <aside class="more">
+        <h4>More</h4>
+        <!-- <ul>
+          <li><a href="#">link</a></li>
+          <li><a href="#">link</a></li>
+          <li><a href="#">link</a></li>
+        </ul> -->
+      </aside>
+    </div> <!-- /image-panel-outer-div -->
+  </div><!-- /image-panel -->
+
+  <div class="moment-frames">
+
+    <div x-intersect.margin.-100px="imageIndex = 0">
+      <article class="story">
+        <p>Enter=0 Dark. In colonial New England, work days for enslaved people began long before daybreak — long before their enslavers
+        got up to begin their own work days.</p>   
+        <p>This is the model version!</p>   
+      </article>
+    </div><!-- Frame1 : END -->
+
+    <div x-intersect.margin.-100px="imageIndex = 1">
+      <article class="story">
+        <p>Enter=1 Candle. While Ebenezer and Abigail Wells continue to sleep in their comfortable bed downstairs, Lucy arises from her straw-filled mattress in the garret and lights a candle so that she can see to dress for the day.</p>
+      </article>
+    </div><!-- Frame2 : END -->
+
+    <div x-intersect.margin.-100px="imageIndex = 2">
+      <article class="story">
+        <p>Enter= 3 Cutaway. Cesar, sleeping on another garret mattress, also awakens and dresses. Lucy and Cesar slip quietly down the stairs to the kitchen.</p>
+      </article>
+    </div><!-- Frame3 : END -->
+
+    <div x-intersect.margin.-100px="imageIndex = 3">
+      <article class="story">
+        <p>Enter=3 B&amp;W Hearth. There, Cesar builds a new fire on the embers remaining from the night before, while Lucy begins to prepare breakfast for the Wells. She and Cesar will eat later.</p>
+      </article>
+    </div><!-- Frame4 : END -->
+
+    <div>
+      <article class="story">
+        <p>Lucy cracks several eggs and places a pot of baked beans at the front of the fire to reheat. She also hangs a pot of water over the fire to boil for tea and puts a jug of apple cider on the table. Finally, she sets out plates, cups, and tableware for the Wells.</p>
+      </article>
+    </div><!-- Frame5 : END -->
+
+    <div>
+      <article class="story">
+        <p>Having renewed the fire, Cesar goes outside with a bucket of cracked corn to feed the chickens.</p>
+      </article>
+    </div><!-- Frame6 : END -->
+
+    <div>
+      <article class="story">
+        <p>Night has fallen and Lucy continues to work, cleaning up the dinner dishes by candlelight. Cesar has returned from a day of work harvesting crops for a neighbor of the Wells — Ebenezer has rented out Cesar’s labor for cash.</p>
+      </article>
+    </div><!-- Frame7 : END -->
+
+    <div>
+      <article class="story">
+        <p>Cesar stokes and banks the fire for the night and then prepares to go out, this time on an errand of his own. He plans to meet one of his friends for a walk — she is waiting for him in the yard behind the Wells house.</p>
+      </article>
+    </div><!-- Frame8 : END -->
+
+  </div></section>
+
+
+
+
+
+</body></html>

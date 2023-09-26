@@ -12,3 +12,6 @@ class MomentTitlelView(TemplateView):
 
 class MomentTemplatelView(TemplateView):
     template_name = "moments/community_scroll.html"
+
+class MomentModelTemplatelView(TemplateView):
+    template_name = "moments/community_scroll_model.html"
