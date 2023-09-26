@@ -165,7 +165,6 @@ nav.moment-options ul li.this-moment {
 /*-- Moment Story Frames --*/
 
 .moment-scroll {/* displays less than 800px */
-/*margin-top: 138px;*/
 	position: relative;
 	display: grid;
 	grid-template-columns: 1fr;
@@ -177,14 +176,14 @@ nav.moment-options ul li.this-moment {
 	.moment-scroll {
 		display: grid;
 		grid-template-columns: 75% 25%;
-		grid-template-rows: 100vh;
+		grid-template-rows: 100vh;/*is this doing anything? */
 		grid-gap: 0;		
 	}
 }
 
 /* the images */
-.image-panel {
-/*	position: relative;*/
+.image-panel {/* displays less than 800px */
+	position: relative;
 	grid-column: 1;
 }
 
@@ -192,9 +191,15 @@ nav.moment-options ul li.this-moment {
 /*	position: fixed;*/
 }
 
-/*.image-panel div.image-panel-outer-div div {
-	position: absolute;
-}*/
+.image-panel div.image-panel-outer-div div {
+	position: fixed;
+  height: 100vh;
+ }
+
+@media screen and (min-width: 800px) { /* displays larger than 800px */
+.image-panel div.image-panel-outer-div div {
+  max-width: 75vw;
+}
 
 .image-panel div.image-panel-outer-div div img { /* displays less than 800px */
 	height: 100%;
@@ -217,30 +222,27 @@ nav.moment-options ul li.this-moment {
 
 /* the text */
 .moment-frames { /* displays less than 800px */
-	background-color: pink;
-	grid-column: 1;
-	height: 15vh;
-	margin: auto;
-	margin-bottom: 100px;
-	padding: 1em;
-	width: 35vw;
+  background-color: pink;
+  grid-column: 1;
+  height: 25vh;
+  margin: auto;
+  padding: 1em;
+  width: 60vw;
+  z-index: 100;
 }
 
 @media screen and (min-width: 800px) { /* displays larger than 800px */
 	.moment-frames {
 		background-color: yellow;
 		grid-column: 2;		
-/*		height: 100vh;
-		max-width: 100%;*/
+		height: 100vh;
+		max-width: 100%;
 		padding: 1em;
 	}
 }
 
 
-
-
-
-.moment-frames aside.more {
+.image-panel aside.more {
 	display: none;
 }
 
