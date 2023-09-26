@@ -1,0 +1,248 @@
+/*-- ---------------- --*/
+/*-- WIREFRAME BASICS --*/
+/*-- ---------------- --*/
+
+body {
+	margin: 0;
+}
+
+header#header {
+  background-color: white;
+	border-bottom: 1px solid lightgrey;
+  height: 137px;
+	padding: 0 1em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+header#header h3 {
+	margin: 0.25em 0;
+}
+
+h1, h2, h3, h4 {
+	color: #038EDF;
+}
+
+h1 {
+	font-size: 3em;
+	font-weight: normal;
+}
+
+a:link {
+	color: #038EDF;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #ff6f06;
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #2A6283
+}
+
+.picture {
+	max-width: 600px;
+}
+
+.global-nav ul {
+	list-style: none;
+	padding: 0;
+}
+
+.global-nav ul li {
+	border: 1px solid #038EDF;
+	display: inline-block;
+	font-size: .8em;
+	padding: 0.25em;
+}
+
+nav.moment-nav {/* for mini-nav */
+	width: 100%;
+	overflow-x: scroll;
+}
+
+nav.moment-nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	white-space: nowrap;
+}
+
+nav.moment-nav ul li {
+	background-color: #f2f2f2;
+	display: inline-block;
+	font-size: .8em;
+	padding: 0.25em;
+	width: 80px;
+	height: 50px;
+	text-align: center;
+	text-wrap: wrap;
+	vertical-align: text-top;
+}
+
+/*-- ---------------- --*/
+/*--   MOMENT BASICS  --*/
+/*-- ---------------- --*/
+
+/*-- Moment Title Frames --*/
+
+.moment-title {
+	height: 100vh;
+	position: relative;
+	text-align: center;
+}
+
+.title-community {
+	background-image: url('http://lucy-proto.deerfield-ma.org/assets/moments/images/community/02-dawn-house-color.jpg');
+}
+
+.moment-title h1 {
+	color: white;
+	margin: 0 0 1em 0;
+	text-shadow: 2px 2px 2px #333;
+}
+
+@media screen and (min-width: 800px) { /* displays larger than 800px */
+	.moment-title h1 {
+		margin: 0 0 1em 0;
+		padding-top: 10%;
+	}
+}
+
+.moment-title-intro {
+	background-color: white;
+	border: 1px solid lightgrey;
+	box-shadow: 2px 2px 2px #333;
+	font-size: 1.2em;
+	margin: auto;
+	opacity: 0.8;
+	padding: 2em;
+	width: 40vw;
+}
+
+.moment-title-intro p.story {
+	font-style: italic;
+}
+
+nav.moment-options ul {
+	list-style: none;
+}
+
+nav.moment-options ul li a:link {
+	color: white;
+}
+
+nav.moment-options ul li a:visited {
+	color: lightgrey;
+}
+
+nav.moment-options ul li a:hover {
+	color: orange;
+}
+
+nav.moment-options ul li.prev-moment {
+	left: 6px;
+	position: absolute;
+	top: 30%;
+}
+
+nav.moment-options ul li.next-moment {
+	right: 6px;
+	position: absolute;
+	top: 30%;
+}
+
+nav.moment-options ul li.this-moment {
+	position: absolute;
+	bottom: 30vh;
+	left: 50%;
+}
+
+/*-- Moment Story Frames --*/
+
+.moment-scroll {/* displays less than 800px */
+/*margin-top: 138px;*/
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	grid-gap: 0;
+}
+
+@media screen and (min-width: 800px) { /* displays larger than 800px */
+	.moment-scroll {
+		display: grid;
+		grid-template-columns: 75% 25%;
+		grid-template-rows: 100vh;
+		grid-gap: 0;		
+	}
+}
+
+/* the images */
+.image-panel {
+/*	position: relative;*/
+	grid-column: 1;
+}
+
+.image-panel div.image-panel-outer-div {
+/*	position: fixed;*/
+}
+
+/*.image-panel div.image-panel-outer-div div {
+	position: absolute;
+}*/
+
+.image-panel div.image-panel-outer-div div img { /* displays less than 800px */
+	height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+}
+/*
+@media screen and (min-width: 800px) { /* displays larger than 800px 
+	.image-panel div {
+		height: 100vh;
+		max-width: 100%;
+	}
+	.image-panel div img {
+		height: 100vh;
+		max-width: 100%;	
+	}
+}*/
+
+/* the text */
+.moment-frames { /* displays less than 800px */
+	background-color: pink;
+	grid-column: 1;
+	height: 15vh;
+	margin: auto;
+	margin-bottom: 100px;
+	padding: 1em;
+	width: 35vw;
+}
+
+@media screen and (min-width: 800px) { /* displays larger than 800px */
+	.moment-frames {
+		background-color: yellow;
+		grid-column: 2;		
+/*		height: 100vh;
+		max-width: 100%;*/
+		padding: 1em;
+	}
+}
+
+
+
+
+
+.moment-frames aside.more {
+	display: none;
+}
+
+
+
