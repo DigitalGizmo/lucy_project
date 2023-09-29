@@ -236,8 +236,21 @@ nav.moment-options ul li.this-moment {
 }
 
 .moment-frames aside.more {
-	display: none;
+	z-index: 99;
+	display: block;
 }
 
+.dons-debug {
+	margin-top: 250px;
+	background-color: white;
+	height: 80px;
+	width: 25px;
+	z-index: 99;
+	position: absolute;
+}
+
+.dons-debug p {
+	margin-left: 8px;
+}
 
 

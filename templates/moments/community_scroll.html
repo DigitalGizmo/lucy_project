@@ -16,6 +16,7 @@
   class="moment-scroll"
   x-data="{
     imageIndex: 0,
+    scrollNumber: 0,
     images: [
       '02-dawn-house-color',
       '03-candle-color',
@@ -23,21 +24,29 @@
       '05-lucy-hearth'
     ],
   }"
+  @scroll.window="
+  scrollNumber = window.pageYOffset,
+  imageIndex = Math.trunc(scrollNumber/700)
+"
+
 >
   <div class="image-panel"> 
     <div class="image-panel-outer-div">
       <div x-show="imageIndex % 2 === 0" 
-        x-transition.opacity.duration.800ms
+        x-transition.opacity.duration.1000ms
       >
         <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`"/>
         <!-- <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/02-dawn-house-color.jpg`"/> -->
       </div>
       <div x-show="imageIndex  % 2 !== 0" 
-        x-transition.opacity.duration.800ms
+        x-transition.opacity.duration.1000ms
       >
       
         <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`"/>
         <!-- <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/03-candle-color.jpg`"/> -->
+      </div>
+      <div class="dons-debug">
+        <p><span x-text="imageIndex"></span> | <span x-text="scrollNumber"></span> </p>
       </div>
       <aside class="more">
         <h4>More</h4>
@@ -52,26 +61,30 @@
 
   <div class="moment-frames">
 
-    <div x-intersect.margin.-100px="imageIndex = 0">
+    <!-- x-intersect.margin.-100px="imageIndex = 0" -->
+    <div>
       <article class="story">
         <p>Enter=0 Dark. In colonial New England, work days for enslaved people began long before daybreak — long before their enslavers
         got up to begin their own work days.</p>      
       </article>
     </div><!-- Frame1 : END -->
 
-    <div x-intersect.margin.-100px="imageIndex = 1">
+    <!-- x-intersect.margin.-100px="imageIndex = 1" -->
+    <div >
       <article class="story">
         <p>Enter=1 Candle. While Ebenezer and Abigail Wells continue to sleep in their comfortable bed downstairs, Lucy arises from her straw-filled mattress in the garret and lights a candle so that she can see to dress for the day.</p>
       </article>
     </div><!-- Frame2 : END -->
 
-    <div x-intersect.margin.-100px="imageIndex = 2">
+    <!-- x-intersect.margin.-100px="imageIndex = 2" -->
+    <div >
       <article class="story">
         <p>Enter= 3 Cutaway. Cesar, sleeping on another garret mattress, also awakens and dresses. Lucy and Cesar slip quietly down the stairs to the kitchen.</p>
       </article>
     </div><!-- Frame3 : END -->
 
-    <div x-intersect.margin.-100px="imageIndex = 3">
+    <!-- x-intersect.margin.-100px="imageIndex = 3" -->
+    <div >
       <article class="story">
         <p>Enter=3 B&W Hearth. There, Cesar builds a new fire on the embers remaining from the night before, while Lucy begins to prepare breakfast for the Wells. She and Cesar will eat later.</p>
       </article>
