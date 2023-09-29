@@ -194,30 +194,45 @@ nav.moment-options ul li.this-moment {
 /*  IMAGES  */
 /* -------- */
 
-/* put the images in the left/only column */
-.image-panel {
-	grid-column: 1;
-}
-/* relative container to hold the inner div */
-.image-panel div.image-panel-outer-div {
-	position: relative;
-}
-/* inner div lets images stack on top of each other */
-.image-panel div.image-panel-outer-div div.image-panel-inner-div { /* displays smaller than 800px */
-	position: absolute;
-}
-/* the image itself is sized to fill the containing div I THINK WE'LL NEED A MEDIA QUERY TO DEAL WITH EXTREMELY WIDE VIEWPORTS*/
-.image-panel div.image-panel-outer-div div.image-panel-inner-div img { /* displays less than 800px */
-	height: auto;
-  width: 100%;
-  object-fit: cover;/*not sure this is doing anything*/
-  object-position: center center;/*not sure this is doing anything*/
-  overflow: hidden;/*not sure this is doing anything*/
+/* for mobile */
+@media screen and (max-width: 799px) { /* displays smaller than 800px */
+	.image-panel {
+		grid-column: 1;
+		background-color: gray;/*need to fix this so it doesn't scroll away */
+		position: relative;
+	}
+	.image-panel div.image-panel-outer-div {
+		position: fixed;
+	}
+	.image-panel div.image-panel-outer-div div.image-panel-inner-div { /* displays smaller than 800px */
+		position: absolute;
+	}
+	.image-panel div.image-panel-outer-div div.image-panel-inner-div img {
+	  height: 50vh;
+	  width: auto;
+	}
 }
 
+/* for desktop */
 @media screen and (min-width: 800px) { /* displays larger than 800px */
+	/* put the images in the left/only column */
+	.image-panel {
+		grid-column: 1;
+		background-color: black;
+	}
+	/* relative container to hold the inner div */
+	.image-panel div.image-panel-outer-div {
+		position: relative;
+	}
+	/* inner div lets images stack on top of each other */
+	.image-panel div.image-panel-outer-div div.image-panel-inner-div { /* displays smaller than 800px */
+		position: absolute;
+	}
 	.image-panel div.image-panel-outer-div div.image-panel-inner-div img {
 		height: calc(100vh - 138px);
+	  width: 100%;
+	  object-fit: cover;
+    object-position: center center;
 	}
 }
 
