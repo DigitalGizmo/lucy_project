@@ -244,3 +244,16 @@ nav.moment-options ul li.this-moment {
 	display: none;
 }
 
+/* poaching */
+.dons-debug {
+	margin-top: 250px;
+	background-color: white;
+	height: 80px;
+	width: 25px;
+	z-index: 99;
+	position: absolute;
+}
+
+.dons-debug p {
+	margin-left: 8px;
+}
