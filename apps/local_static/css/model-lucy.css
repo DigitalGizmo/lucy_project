@@ -48,6 +48,15 @@ a:visited {
 	max-width: 600px;
 }
 
+.global-nav {
+	margin-bottom: -14px;
+}
+@media screen and (min-width: 800px) { /* displays larger than 800px */
+	.global-nav {
+		margin-bottom: unset;
+	}
+}
+
 .global-nav ul {
 	list-style: none;
 	padding: 0;
@@ -181,35 +190,29 @@ nav.moment-options ul li.this-moment {
 		grid-template-rows: calc(100vh - 138px);
 	}
 }
+/* -------- */
+/*  IMAGES  */
+/* -------- */
 
-/* the images */
+/* put the images in the left/only column */
 .image-panel {
 	grid-column: 1;
 }
-
+/* relative container to hold the inner div */
 .image-panel div.image-panel-outer-div {
 	position: relative;
 }
-
-.image-panel div.image-panel-outer-div div.image-panel-inner-div {/* displays smaller than 800px */
+/* inner div lets images stack on top of each other */
+.image-panel div.image-panel-outer-div div.image-panel-inner-div { /* displays smaller than 800px */
 	position: absolute;
-/*  height: 60vh;
-  width: auto;*/
 }
-
-@media screen and (min-width: 800px) { /* displays larger than 800px */
-	.image-panel div.image-panel-outer-div div.image-panel-inner-div {
-/*		height: auto;
-	  max-width: 75vw;*/
-	}
-}
-
+/* the image itself is sized to fill the containing div I THINK WE'LL NEED A MEDIA QUERY TO DEAL WITH EXTREMELY WIDE VIEWPORTS*/
 .image-panel div.image-panel-outer-div div.image-panel-inner-div img { /* displays less than 800px */
 	height: auto;
   width: 100%;
-  object-fit: cover;
-  object-position: center;
-  overflow: hidden;
+  object-fit: cover;/*not sure this is doing anything*/
+  object-position: center center;/*not sure this is doing anything*/
+  overflow: hidden;/*not sure this is doing anything*/
 }
 
 @media screen and (min-width: 800px) { /* displays larger than 800px */
@@ -218,13 +221,13 @@ nav.moment-options ul li.this-moment {
 	}
 }
 
-/* the text */
+/* -------- */
+/*   TEXT   */
+/* -------- */
+
 .moment-frames { /* displays less than 800px */
-  background-color: pink;
   grid-column: 1;
-  height: 25vh;
   margin: auto;
-  padding: 1em;
   width: 60vw;
   z-index: 10;
 }
@@ -238,6 +241,23 @@ nav.moment-options ul li.this-moment {
 		overflow: auto;
 		padding: 1em;
 	}
+}
+
+.moment-frames article.story {/* displays less than 800px */
+  margin-bottom: 100px;
+  background-color: pink;
+  padding: 1em;
+}
+@media screen and (min-width: 800px) { /* displays larger than 800px */
+	.moment-frames article.story {
+	  margin-bottom: 100px;
+	  background-color: transparent;
+	  padding: 1em;
+	}
+}
+
+article.story p {
+/*	margin-bottom: 100px;*/
 }
 
 .image-panel aside.more {
