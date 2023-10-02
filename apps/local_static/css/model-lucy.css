@@ -228,12 +228,27 @@ nav.moment-options ul li.this-moment {
 		position: absolute;
 	}
 	.image-panel div.image-panel-outer-div div.image-panel-inner-div img {
-		height: calc(100vh - 138px);
-	  width: 100%;
+/*		height: calc(100vh - 138px);
+	  width: 100%;*/
 	  object-fit: cover;
     object-position: center center;
 	}
 }
+
+
+
+@media (max-aspect-ratio: 4/3) {
+  .image-panel div.image-panel-outer-div div.image-panel-inner-div img  {
+    height: calc(100vh - 138px); /* when container is tall, favor height */
+  }
+}
+
+@media (min-aspect-ratio: 4/3) {
+  .image-panel div.image-panel-outer-div div.image-panel-inner-div img  {
+    width: 100%; /* when container is wide, favor width */
+  }
+}
+
 
 /* -------- */
 /*   TEXT   */
