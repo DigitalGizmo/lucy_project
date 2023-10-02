@@ -174,10 +174,11 @@ nav.moment-options ul li.this-moment {
 /*-- Scrolling Moment Story Frames --*/
 
 .moment-scroll {/* displays less than 800px */
+	background-color: black;
 	position: relative;
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: calc(100vh - 138px);
+	grid-template-rows: 1fr;
 	grid-gap: 0;
 	margin-top: 138px;
 	overflow: hidden;
@@ -198,7 +199,6 @@ nav.moment-options ul li.this-moment {
 @media screen and (max-width: 799px) { /* displays smaller than 800px */
 	.image-panel {
 		grid-column: 1;
-		background-color: gray;/*need to fix this so it doesn't scroll away */
 		position: relative;
 	}
 	.image-panel div.image-panel-outer-div {
@@ -218,7 +218,6 @@ nav.moment-options ul li.this-moment {
 	/* put the images in the left/only column */
 	.image-panel {
 		grid-column: 1;
-		background-color: black;
 	}
 	/* relative container to hold the inner div */
 	.image-panel div.image-panel-outer-div {
