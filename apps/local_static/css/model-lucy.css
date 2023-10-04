@@ -189,7 +189,8 @@ nav.moment-options ul li.this-moment {
 @media screen and (min-width: 800px) { /* displays larger than 800px */
 	.moment-scroll {
 		grid-template-columns: 75% 25%;
-		grid-template-rows: calc(100vh - 138px) auto;
+/*		grid-template-rows: calc(100vh - 138px) auto;*/
+		grid-template-rows: auto auto;
 	}
 }
 
@@ -270,18 +271,18 @@ nav.moment-options ul li.this-moment {
 		grid-column: 2;		
 		height: 100%;
 		max-width: 100%;
-		overflow: auto;
+/*		overflow: auto;*/
 	}
 }
 
 .story-frames article.story {/* displays less than 800px */
-  margin-bottom: 100px;
+  margin-bottom: 200px;
   background-color: pink;
   padding: 1em;
 }
 @media screen and (min-width: 800px) { /* displays larger than 800px */
 	.story-frames article.story {
-	  margin-bottom: 100px;
+	  margin-bottom: 200px;
 	  background-color: transparent;
 	  padding: 1em;
 	}
