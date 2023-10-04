@@ -171,14 +171,15 @@ nav.moment-options ul li.this-moment {
 	left: 50%;
 }
 
+/* --------------------------------- */
 /*-- Scrolling Moment Story Frames --*/
-
+/* --------------------------------- */
 .moment-scroll {/* displays less than 800px */
 	background-color: black;
 	position: relative;
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 1fr;
+	grid-template-rows: 1fr 1fr;
 	grid-gap: 0;
 	margin-top: 138px;
 	overflow: hidden;
@@ -187,10 +188,11 @@ nav.moment-options ul li.this-moment {
 
 @media screen and (min-width: 800px) { /* displays larger than 800px */
 	.moment-scroll {
-		grid-template-columns: 75% 23%;/*why can't this be 25%? */
-		grid-template-rows: calc(100vh - 138px);
+		grid-template-columns: 75% 25%;
+		grid-template-rows: calc(100vh - 138px) auto;
 	}
 }
+
 /* -------- */
 /*  IMAGES  */
 /* -------- */
@@ -230,32 +232,32 @@ nav.moment-options ul li.this-moment {
 		position: absolute;
 	}
 	.image-panel div.image-panel-outer-div div.image-panel-inner-div img {
-		height: calc(100vh - 138px);
+/*		height: calc(100vh - 138px);*/
+		height: 100%;
 	  width: 100%;
 	  object-fit: cover;
-    object-position: 50% 50%;
 	}
 }
 
-@media (max-aspect-ratio: 4/3) {/* when container is tall, favor height */
+/*@media (max-aspect-ratio: 4/3) {/* when container is tall, favor height 
   .image-panel div.image-panel-outer-div div.image-panel-inner-div img  {
     height: calc(100vh - 138px); 
     width: auto;
   }
 }
-@media (min-aspect-ratio: 16/9) {/* when container is wide, favor width */
+@media (min-aspect-ratio: 16/9) {/* when container is wide, favor width 
   .image-panel div.image-panel-outer-div div.image-panel-inner-div img  {
     width: 100%;
     height: auto;
   }
-}
+}*/
 
 
-/* -------- */
-/*   TEXT   */
-/* -------- */
+/* -------------- */
+/*   STORY TEXT   */
+/* -------------- */
 
-.moment-frames { /* displays less than 800px */
+.story-frames { /* displays less than 800px */
   grid-column: 1;
   margin: auto;
   width: 60vw;
@@ -263,23 +265,22 @@ nav.moment-options ul li.this-moment {
 }
 
 @media screen and (min-width: 800px) { /* displays larger than 800px */
-	.moment-frames {
+	.story-frames {
 		background-color: yellow;
 		grid-column: 2;		
 		height: 100%;
 		max-width: 100%;
 		overflow: auto;
-		padding: 1em;
 	}
 }
 
-.moment-frames article.story {/* displays less than 800px */
+.story-frames article.story {/* displays less than 800px */
   margin-bottom: 100px;
   background-color: pink;
   padding: 1em;
 }
 @media screen and (min-width: 800px) { /* displays larger than 800px */
-	.moment-frames article.story {
+	.story-frames article.story {
 	  margin-bottom: 100px;
 	  background-color: transparent;
 	  padding: 1em;
@@ -294,6 +295,17 @@ article.story p {
 	display: none;
 }
 
+/* -------------- */
+/*   TOTAL MORE   */
+/* -------------- */
+.total-more {
+	background-color: white;
+	grid-column: 1 / 3;
+	grid-row: 2;
+	padding: 1em;
+}
+
+
 /* poaching */
 .dons-debug {
 	margin-top: 250px;
@@ -306,12 +318,4 @@ article.story p {
 
 .dons-debug p {
 	margin-left: 8px;
-}
-
-
-/* -------------- */
-/*   TOTAL MORE   */
-/* -------------- */
-.total-more {
-	padding: 1em;
 }
