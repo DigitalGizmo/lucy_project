@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object-fit2-2-1</title>
+<style>
+
+.moment-scroll {/* displays less than 800px */
+	background-color: black;
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	grid-gap: 0;
+	margin-top: 138px; 
+	overflow: hidden;
+	z-index: 1;
+}
+
+@media screen and (min-width: 800px) { /* displays larger than 800px */
+	.moment-scroll {
+		grid-template-columns: 75% 23%;/*why can't this be 25%? */
+		/* grid-template-rows: calc(100vh - 138px); don */
+        grid-template-rows: 100vh;
+	}
+}
+
+/* for mobile */
+@media screen and (max-width: 799px) { /* displays smaller than 800px */
+	.image-panel {
+		grid-column: 1;
+		position: relative;
+	}
+	.image-panel div.image-panel-outer-div {
+		position: fixed;
+		/* position: relative; don */
+	}
+	.image-panel div.image-panel-outer-div div.image-panel-inner-div { /* displays smaller than 800px */
+		position: absolute;
+	}
+
+	.image-panel div.image-panel-outer-div div.image-panel-inner-div img {
+        height: 50vh;
+        width: auto;
+        /* width: 100%; don */
+        object-fit: cover;/* working? */
+        object-position: center center;
+ 	}
+
+}
+
+/* for desktop */
+@media screen and (min-width: 800px) { /* displays larger than 800px */
+	/* put the images in the left/only column */
+	.image-panel {
+		background-color: bisque;
+		/* margin: 3px; */
+		grid-column: 1;
+	}
+	/* relative container to hold the inner div */
+	.image-panel div.image-panel-outer-div {
+		/* position: relative; */
+		background-color: darkgoldenrod;
+        width: 75%;
+        /* height: 100vh; */
+		height: calc(100vh - 148px); /* 138 */
+		position: fixed;
+    }
+
+	/* No inner div version */
+	/* .image-panel div.image-panel-outer-div div {  /* displays smaller than 800px */
+	.thing1 {
+		background-color: firebrick;
+		margin: 5px;
+        width: 100%;
+        /* height: 100vh; */
+		height: calc(100vh - 148px); 
+		/* position: fixed; */
+		position: absolute;
+	}
+
+	.thing2 {  /* displays smaller than 800px */
+		background-color:rebeccapurple;
+		margin: 10px;
+        width: 97%;
+        /* height: 100vh; */
+		height: calc(100vh - 148px); 
+		/* position: fixed; */
+		position: absolute;
+		z-index: 20; 
+	}
+
+
+
+	/* inner div lets images stack on top of each other */
+    /* see https://www.w3.org/wiki/CSS_absolute_and_fixed_positioning?source=post_page */
+	.image-panel div.image-panel-outer-div div.image-panel-inner-div { /* displays smaller than 800px */
+        width: 100%;
+        height: 100vh;
+		/* height: calc(100vh - 138px); don */
+		/* position: fixed; */
+		position: absolute;
+	}
+
+	.image-panel div.image-panel-outer-div div.image-panel-inner-div img {
+		/* position: absolute; */
+        width: 100%;
+        /* height: 100vh; */
+		height: calc(100vh - 138px); 
+        border: 1px solid #000;
+        object-fit: cover;      
+	}
+ 
+}
+
+.story-frames { /* displays less than 800px */
+  grid-column: 1;
+  margin: auto;
+  width: 60vw;
+  z-index: 10;
+}
+
+@media screen and (min-width: 800px) { /* displays larger than 800px */
+	.story-frames {
+		background-color:cadetblue;
+		grid-column: 2;		
+		height: 100%;
+		max-width: 100%;
+/*		overflow: auto;*/
+	}
+}
+
+.dons-debug {
+	margin-top: 250px;
+	background-color: white;
+	height: 80px;
+	width: 25px;
+	z-index: 99;
+	position: absolute;
+}
+
+.dons-debug p {
+	margin-left: 8px;
+}
+
+</style>
+</head>
+<body>
+    <section class="moment-scroll">
+        <div class="image-panel">
+            <div class="image-panel-outer-div">
+                <!-- <div class="image-panel-inner-div"> -->
+                    <div class="thing1">
+                        <!-- <img 
+                        src="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/02-dawn-house-color.jpg" 
+                        alt="there is no plan B"> -->
+                    </div>
+                    <div class="thing2">
+                        <!-- <img 
+                        src="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/02-dawn-house-color.jpg" 
+                        alt="there is no plan B"> -->
+                    </div>
+                <!-- </div> -->
+            </div>      
+        </div>
+
+		<div class="story-frames">
+			<div>
+			  <article class="story">
+				<p>Enter=0 Dark. In colonial New England, work days for enslaved people began long before daybreak — long before their enslavers
+				got up to begin their own work days.</p>   
+				<p>This is the model version!</p>   
+			  </article>
+			</div><!-- Frame1 : END -->
+	
+
+    </section>
+    
+</body>
+</html>
