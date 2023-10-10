@@ -17,6 +17,7 @@
   x-data="{
     imageIndex: 0,
     scrollNumber: 0,
+    panelHeight: window.innerHeight - 138,
     images: [
       '02-dawn-house-color',
       '03-candle-color',
@@ -24,9 +25,11 @@
       '05-lucy-hearth'
     ],
   }"
+  @resize.window=" panelHeight = window.innerHeight - 138 "
   @scroll.window="
   scrollNumber = window.pageYOffset,
-  imageIndex = Math.trunc(scrollNumber/700)
+  // Adding panelHeight to scollNumber make quotient = 1 sooner
+  imageIndex = Math.trunc((scrollNumber + panelHeight - 125)/(panelHeight))
   ">
   <div class="image-panel"> 
     <div class="image-panel-fixed">
@@ -46,7 +49,10 @@
         <!-- <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/03-candle-color.jpg`"/> -->
       </div>
       <div class="dons-debug">
-        <p><span x-text="imageIndex"></span> | <span x-text="scrollNumber"></span> </p>
+        <p><span x-text="imageIndex"></span> | 
+          <span x-text="scrollNumber"></span> |
+          <span x-text="panelHeight"></span> 
+        </p>
       </div>
       <aside class="more">
         <h4>More</h4>
