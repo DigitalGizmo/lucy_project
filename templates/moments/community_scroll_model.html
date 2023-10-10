@@ -45,119 +45,116 @@
   	</nav>
   </header>
 
-<!--
-   <div class="title-panel">
-    <h1>Community Within Community</h1>
-    <p>Scroll down to begin...</p>
-  </div>
--->
+  <!--
+    <div class="title-panel">
+      <h1>Community Within Community</h1>
+      <p>Scroll down to begin...</p>
+    </div>
+  -->
 
-    <section class="moment-scroll" x-data="{
-        imageIndex: 0,
-        images: [
-          '02-dawn-house-color',
-          '03-candle-color',
-          '04-house-cutaway-color',
-          '05-lucy-hearth'
-        ],
-      }">
-      <div class="image-panel"> 
-        <div class="image-panel-fixed">
-          <div> <!--  image-panel-fixed-wrap-img-more -->
-            <div class="image-panel-img-div">
-              <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/02-dawn-house-color.jpg`"/>
-            </div>
-  
-            <div class="dons-debug">
-              <p>More </p>
-            </div>
-          </div>
+  <section class="moment-scroll" x-data="{
+      imageIndex: 0,
+      images: [
+        '02-dawn-house-color',
+        '03-candle-color',
+        '04-house-cutaway-color',
+        '05-lucy-hearth'
+      ],
+    }">
+    <div class="image-panel"> 
+      <div class="image-panel-fixed">
+        <div class="image-panel-image">
+          <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/02-dawn-house-color.jpg`"/>
+        </div>
 
-          <!-- <aside class="more">
-            <h4>More</h4> -->
-            <!-- <ul>
-              <li><a href="#">link</a></li>
-              <li><a href="#">link</a></li>
-              <li><a href="#">link</a></li>
-            </ul> -->
-          <!-- </aside> -->
-        </div><!-- /div.image-panel-fixed -->
-      </div><!-- /image-panel -->
+        <div class="dons-debug">
+          <p>More </p>
+        </div>
 
-      <div class="story-frames">
+        <!-- <aside class="more">
+          <h4>More</h4> -->
+          <!-- <ul>
+            <li><a href="#">link</a></li>
+            <li><a href="#">link</a></li>
+            <li><a href="#">link</a></li>
+          </ul> -->
+        <!-- </aside> -->
+      </div><!-- /div.image-panel-fixed -->
+    </div><!-- /image-panel -->
 
-        <div x-intersect.margin.-100px="imageIndex = 0">
-          <article class="story">
-            <p>Enter=0 Dark. In colonial New England, work days for enslaved people began long before daybreak — long before their enslavers
-            got up to begin their own work days.</p>   
-            <p>This is the UPDATED model version!</p>   
-          </article>
-        </div><!-- Frame1 : END -->
+    <div class="story-frames">
 
-        <div x-intersect.margin.-100px="imageIndex = 1">
-          <article class="story">
-            <p>Enter=1 Candle. While Ebenezer and Abigail Wells continue to sleep in their comfortable bed downstairs, Lucy arises from her straw-filled mattress in the garret and lights a candle so that she can see to dress for the day.</p>
-          </article>
-        </div><!-- Frame2 : END -->
+      <div x-intersect.margin.-100px="imageIndex = 0">
+        <article class="story">
+          <p>Enter=0 Dark. In colonial New England, work days for enslaved people began long before daybreak — long before their enslavers
+          got up to begin their own work days.</p>   
+          <p>This is the UPDATED model version!</p>   
+        </article>
+      </div><!-- Frame1 : END -->
 
-        <div x-intersect.margin.-100px="imageIndex = 2">
-          <article class="story">
-            <p>Enter= 3 Cutaway. Cesar, sleeping on another garret mattress, also awakens and dresses. Lucy and Cesar slip quietly down the stairs to the kitchen.</p>
-          </article>
-        </div><!-- Frame3 : END -->
+      <div x-intersect.margin.-100px="imageIndex = 1">
+        <article class="story">
+          <p>Enter=1 Candle. While Ebenezer and Abigail Wells continue to sleep in their comfortable bed downstairs, Lucy arises from her straw-filled mattress in the garret and lights a candle so that she can see to dress for the day.</p>
+        </article>
+      </div><!-- Frame2 : END -->
 
-        <div x-intersect.margin.-100px="imageIndex = 3">
-          <article class="story">
-            <p>Enter=3 B&amp;W Hearth. There, Cesar builds a new fire on the embers remaining from the night before, while Lucy begins to prepare breakfast for the Wells. She and Cesar will eat later.</p>
-          </article>
-        </div><!-- Frame4 : END -->
+      <div x-intersect.margin.-100px="imageIndex = 2">
+        <article class="story">
+          <p>Enter= 3 Cutaway. Cesar, sleeping on another garret mattress, also awakens and dresses. Lucy and Cesar slip quietly down the stairs to the kitchen.</p>
+        </article>
+      </div><!-- Frame3 : END -->
 
-        <div>
-          <article class="story">
-            <p>Lucy cracks several eggs and places a pot of baked beans at the front of the fire to reheat. She also hangs a pot of water over the fire to boil for tea and puts a jug of apple cider on the table. Finally, she sets out plates, cups, and tableware for the Wells.</p>
-          </article>
-        </div><!-- Frame5 : END -->
+      <div x-intersect.margin.-100px="imageIndex = 3">
+        <article class="story">
+          <p>Enter=3 B&amp;W Hearth. There, Cesar builds a new fire on the embers remaining from the night before, while Lucy begins to prepare breakfast for the Wells. She and Cesar will eat later.</p>
+        </article>
+      </div><!-- Frame4 : END -->
 
-        <div>
-          <article class="story">
-            <p>Having renewed the fire, Cesar goes outside with a bucket of cracked corn to feed the chickens.</p>
-          </article>
-        </div><!-- Frame6 : END -->
+      <div>
+        <article class="story">
+          <p>Lucy cracks several eggs and places a pot of baked beans at the front of the fire to reheat. She also hangs a pot of water over the fire to boil for tea and puts a jug of apple cider on the table. Finally, she sets out plates, cups, and tableware for the Wells.</p>
+        </article>
+      </div><!-- Frame5 : END -->
 
-        <div>
-          <article class="story">
-            <p>Night has fallen and Lucy continues to work, cleaning up the dinner dishes by candlelight. Cesar has returned from a day of work harvesting crops for a neighbor of the Wells — Ebenezer has rented out Cesar’s labor for cash.</p>
-          </article>
-        </div><!-- Frame7 : END -->
+      <div>
+        <article class="story">
+          <p>Having renewed the fire, Cesar goes outside with a bucket of cracked corn to feed the chickens.</p>
+        </article>
+      </div><!-- Frame6 : END -->
 
-        <div>
-          <article class="story">
-            <p>Cesar stokes and banks the fire for the night and then prepares to go out, this time on an errand of his own. He plans to meet one of his friends for a walk — she is waiting for him in the yard behind the Wells house.</p>
-          </article>
-        </div><!-- Frame8 : END -->
-      </div><!--/story-frames-->
+      <div>
+        <article class="story">
+          <p>Night has fallen and Lucy continues to work, cleaning up the dinner dishes by candlelight. Cesar has returned from a day of work harvesting crops for a neighbor of the Wells — Ebenezer has rented out Cesar’s labor for cash.</p>
+        </article>
+      </div><!-- Frame7 : END -->
 
-      <article class="total-more">
-        <h2>The Necessity for Community</h2>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-        <h3>Who Else?</h3>
-        <ul>
-          <li>This person</li>
-          <li>That person</li>
-          <li>Another person</li>
-          <li>A fourth person</li>
-        </ul>
-        <h3>How Do We Know?</h3>
-        <ul>
-          <li>an artifact</li>
-          <li>a document</li>
-          <li>an artifact</li>
-          <li>a document</li>
-        </ul>
-      </article> -->
-      <!--/total-more
+      <div>
+        <article class="story">
+          <p>Cesar stokes and banks the fire for the night and then prepares to go out, this time on an errand of his own. He plans to meet one of his friends for a walk — she is waiting for him in the yard behind the Wells house.</p>
+        </article>
+      </div><!-- Frame8 : END -->
+    </div><!--/story-frames-->
 
-    </section><!--/moment-scroll-->
+    <article class="total-more">
+      <h2>The Necessity for Community</h2>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+      <h3>Who Else?</h3>
+      <ul>
+        <li>This person</li>
+        <li>That person</li>
+        <li>Another person</li>
+        <li>A fourth person</li>
+      </ul>
+      <h3>How Do We Know?</h3>
+      <ul>
+        <li>an artifact</li>
+        <li>a document</li>
+        <li>an artifact</li>
+        <li>a document</li>
+      </ul>
+    </article> <!--/total-more -->
+
+  </section><!--/moment-scroll-->
 
 </body>
 </html>

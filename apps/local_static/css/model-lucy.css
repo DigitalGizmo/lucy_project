@@ -207,18 +207,16 @@ nav.moment-options ul li.this-moment {
 		position: fixed;
 	}
 
-	.image-panel-img-div { /* displays smaller than 800px */
+	.image-panel-image { /* displays smaller than 800px */
 		position: absolute;
 	}
 
-	.image-panel-img-div img {
+	.image-panel-image img {
         height: 50vh;
         width: auto;
         /* width: 100%; don */
         object-fit: cover;/* working? */  
 	}
-
-
 }
 
 /* for desktop */
@@ -228,40 +226,31 @@ nav.moment-options ul li.this-moment {
 		grid-column: 1;
 	}
 
-
 	/* relative container to hold the inner div */
 	.image-panel div.image-panel-fixed {
-		/* position: relative; */
-		background-color: darkgoldenrod;
+		/* background-color: darkgoldenrod; */
         width: 75%;
-        /* height: 100vh; */
-		height: calc(100vh - 148px); /* 138 */
+		height: calc(100vh - 138px); /* 138 */
 		position: fixed;
     }
 
-	
 	/* No inner div version */
-	.image-panel-img-div {
-		background-color: firebrick;
-		margin: 5px;
+	.image-panel-image {
 		width: 100%;
-		/* height: 100vh; */
-		height: calc(100vh - 148px); 
-		/* position: fixed; */
+		height: calc(100vh - 138px); 
 		position: absolute;
 	}
 
-	.image-panel-img-div img {
-		/* position: absolute; */
+	/* It's true, the size has to be declared this third time! */
+	.image-panel-image img {
         width: 100%;
-        /* height: 100vh; */
-		height: calc(100vh - 148px); 
-        border: 1px solid #000;
+		height: calc(100vh - 138px); 
+        /* border: 1px solid #000; */
         object-fit: cover;      
 	}
 
 	.dons-debug {
-		margin-top: 250px;
+		margin-top: 250px; /* should be something relative */
 		background-color: white;
 		height: 80px;
 		width: 25px;
@@ -272,25 +261,7 @@ nav.moment-options ul li.this-moment {
 	.dons-debug p {
 		margin-left: 8px;
 	}
-
-
-
-
 }
-
-/*@media (max-aspect-ratio: 4/3) {/* when container is tall, favor height 
-  .image-panel div.image-panel-fixed div.image-panel-img-div img  {
-    height: calc(100vh - 138px); 
-    width: auto;
-  }
-}
-@media (min-aspect-ratio: 16/9) {/* when container is wide, favor width 
-  .image-panel div.image-panel-fixed div.image-panel-img-div img  {
-    width: 100%;
-    height: auto;
-  }
-}*/
-
 
 /* -------------- */
 /*   STORY TEXT   */
