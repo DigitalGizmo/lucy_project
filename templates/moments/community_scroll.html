@@ -27,18 +27,18 @@
   @scroll.window="
   scrollNumber = window.pageYOffset,
   imageIndex = Math.trunc(scrollNumber/700)
-"
-
->
+  ">
   <div class="image-panel"> 
-    <div class="image-panel-outer-div">
-      <div x-show="imageIndex % 2 === 0" 
+    <div class="image-panel-fixed">
+      <div class="image-panel-image"
+        x-show="imageIndex % 2 === 0" 
         x-transition.opacity.duration.1000ms
       >
         <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`"/>
         <!-- <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/02-dawn-house-color.jpg`"/> -->
       </div>
-      <div x-show="imageIndex  % 2 !== 0" 
+      <div class="image-panel-image"
+        x-show="imageIndex  % 2 !== 0" 
         x-transition.opacity.duration.1000ms
       >
       
@@ -59,7 +59,7 @@
     </div> <!-- /image-panel-outer-div -->
   </div><!-- /image-panel -->
 
-  <div class="moment-frames">
+  <div class="story-frames">
 
     <!-- x-intersect.margin.-100px="imageIndex = 0" -->
     <div>
@@ -113,7 +113,27 @@
         <p>Cesar stokes and banks the fire for the night and then prepares to go out, this time on an errand of his own. He plans to meet one of his friends for a walk — she is waiting for him in the yard behind the Wells house.</p>
       </article>
     </div><!-- Frame8 : END -->
+  </div><!--/story-frames-->
 
-  </section>
+  <article class="total-more">
+    <h2>The Necessity for Community</h2>
+    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+    <h3>Who Else?</h3>
+    <ul>
+      <li>This person</li>
+      <li>That person</li>
+      <li>Another person</li>
+      <li>A fourth person</li>
+    </ul>
+    <h3>How Do We Know?</h3>
+    <ul>
+      <li>an artifact</li>
+      <li>a document</li>
+      <li>an artifact</li>
+      <li>a document</li>
+    </ul>
+  </article> <!--/total-more -->
+
+</section> <!--/moment-scroll-->
 
 {% endblock moment %}

@@ -14,7 +14,7 @@ header#header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 100;/* at the top of the stack */
 }
 
 header#header h3 {
@@ -47,6 +47,16 @@ a:visited {
 .picture {
 	max-width: 600px;
 }
+/* addition since the fork in the style road */
+.global-nav {
+	margin-bottom: -14px;
+}
+@media screen and (min-width: 800px) { /* displays larger than 800px */
+	.global-nav {
+		margin-bottom: unset;
+	}
+}
+/* end addition */
 
 .global-nav ul {
 	list-style: none;
@@ -84,11 +94,13 @@ nav.moment-nav ul li {
 	vertical-align: text-top;
 }
 
-/*-- ---------------- --*/
-/*--   MOMENT BASICS  --*/
-/*-- ---------------- --*/
+/* -------------------- */
+/* ----  MOMENTS   ---- */
+/* -------------------- */
 
-/*-- Moment Title Frames --*/
+/* --------------------------------- */
+/* ------  Moment Title Frames ----- */
+/* --------------------------------- */
 
 .moment-title {
 	height: 100vh;
@@ -162,84 +174,156 @@ nav.moment-options ul li.this-moment {
 	left: 50%;
 }
 
-/*-- Moment Story Frames --*/
-
-.moment-scroll {
+/* ----------------------------------- */
+/* -- Scrolling Moment Story Frames -- */
+/* ----------------------------------- */
+.moment-scroll {/* displays less than 800px */
+	background-color: black;
 	position: relative;
-}
-
-/* the images */
-.image-panel {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: fit-content auto;
+	grid-gap: 0;
 	margin-top: 138px;
-	position: relative;
-}
-
-.image-panel div.image-panel-outer-div {
-	position: fixed;
-}
-
-/* New that this is absolute rather than static -DB */
-.image-panel div.image-panel-outer-div div {
-	position: absolute;
-}
-
-.image-panel div.image-panel-outer-div div img { /* displays less than 800px */
-	height: auto;
-	max-width: 100vw;	
-}
-/*
-@media screen and (min-width: 800px) { /* displays larger than 800px 
-	.image-panel div {
-		height: 100vh;
-		max-width: 100%;
-	}
-	.image-panel div img {
-		height: 100vh;
-		max-width: 100%;	
-	}
-}*/
-
-/* the text */
-.moment-frames { /* displays less than 800px */
-  position: relative;
-  z-index: 10;
-}
-/*
-@media screen and (min-width: 800px) {  displays larger than 800px 
-	.moment-frames {
-		display: grid;
-		grid-template-columns: 75% 25%;
-		grid-template-rows: auto;
-		grid-gap: 0;		
-	}
-}*/
-.moment-frames div { /* displays less than 800px */
-  margin-left: 50%;
-	background-color: white;
-	height: 15vh;
-	margin: auto;
-	margin-bottom: 100px;
-	padding: 1em;
-	width: 35vw;
+	overflow: hidden;
+	z-index: 1;
 }
 
 @media screen and (min-width: 800px) { /* displays larger than 800px */
-	.moment-frames div {
-		background-color: yellow;
-		float: right;
-		clear: both;
-		height: 100vh;
-		margin: 0;
-		width: 25%;
-		padding: 1em;
+	.moment-scroll {
+		grid-template-columns: 75% 25%;
+		grid-template-rows: auto auto;
 	}
 }
 
-.moment-frames aside.more {
-	z-index: 99;
-	display: block;
+/* -------- */
+/*  IMAGES  */
+/* -------- */
+
+/* for mobile */
+@media screen and (max-width: 799px) { /* displays smaller than 800px */
+	.image-panel {
+	/* put the images in the only column */
+		grid-column: 1;
+		grid-row: 1;
+	}
+	/* fixed container to keep image from scrolling */
+	.image-panel div.image-panel-fixed {
+    height: 60vh;
+		width: 100%;
+		position: fixed;
+	}
+	/* No inner div version */
+	.image-panel-image { /* displays smaller than 800px */
+    height: 60vh;
+		width: 100%;
+ 		position: absolute;
+	}
+	/* the size has to be declared this third time! */
+	.image-panel-image img {
+    height: 60vh;
+		width: 100%;
+    object-fit: cover;      
+	}
 }
 
+/* for desktop */
+@media screen and (min-width: 800px) { /* displays larger than 800px */
+	/* put the images in the left column */
+	.image-panel {
+		grid-column: 1;
+	}
+	/* fixed container to keep image from scrolling */
+	.image-panel div.image-panel-fixed {
+    width: 75%;
+		height: calc(100vh - 138px);
+		position: fixed;
+    }
+	/* No inner div version */
+	.image-panel-image {
+		width: 100%;
+		height: calc(100vh - 138px); 
+		position: absolute;
+	}
+	/* the size has to be declared this third time! */
+	.image-panel-image img {
+    width: 100%;
+		height: calc(100vh - 138px); 
+    object-fit: cover;      
+	}
+	/* More panel */
+	.dons-debug {
+		margin-top: 250px; /* should be something relative */
+		background-color: white;
+		height: 80px;
+		width: 25px;
+		z-index: 99;
+		position: absolute;
+	}
+	
+	.dons-debug p {
+		margin-left: 8px;
+	}
+}
+
+/* -------------- */
+/*   STORY TEXT   */
+/* -------------- */
+
+.story-frames { /* displays less than 800px */
+  grid-column: 1;
+	grid-row: 1;
+  margin: 30vh auto 30vh auto;
+  width: 60vw;
+  z-index: 10;
+}
+
+@media screen and (min-width: 800px) { /* displays larger than 800px */
+	.story-frames {
+		background-color: yellow;
+		grid-column: 2;		
+		height: 100%;
+		margin: auto;
+		max-width: 100%;
+/*		overflow: auto;*/
+	}
+}
+
+.story-frames article.story {/* displays less than 800px */
+  /* margin-bottom: 200px; */
+  margin-bottom: calc(100vh - 138px);
+  background-color: pink;
+  padding: 1em;
+}
+@media screen and (min-width: 800px) { /* displays larger than 800px */
+	.story-frames article.story {
+	  /* margin-bottom: 200px; */
+	  margin-bottom: calc(100vh - 138px);
+	  background-color: transparent;
+	  padding: 1em;
+	}
+}
+
+article.story p {
+}
+
+.image-panel aside.more {
+	display: none;
+}
+
+/* -------------- */
+/*   TOTAL MORE   */
+/* -------------- */
+.total-more {
+	background-color: white;
+	grid-column: 1 / 3;
+	grid-row: 2;
+	padding: 1em;
+	z-index: 11;
+}
+
+
+/* poaching */
 .dons-debug {
 	margin-top: 250px;
 	background-color: white;
@@ -252,5 +336,3 @@ nav.moment-options ul li.this-moment {
 .dons-debug p {
 	margin-left: 8px;
 }
-
-
