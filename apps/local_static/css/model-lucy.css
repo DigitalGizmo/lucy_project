@@ -181,7 +181,7 @@ nav.moment-options ul li.this-moment {
 	position: relative;
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 100vh auto;
+	grid-template-rows: fit-content auto;
 	grid-gap: 0;
 	margin-top: 138px;
 	overflow: hidden;
@@ -204,6 +204,7 @@ nav.moment-options ul li.this-moment {
 	.image-panel {
 	/* put the images in the only column */
 		grid-column: 1;
+		grid-row: 1;
 	}
 	/* fixed container to keep image from scrolling */
 	.image-panel div.image-panel-fixed {
@@ -270,7 +271,8 @@ nav.moment-options ul li.this-moment {
 
 .story-frames { /* displays less than 800px */
   grid-column: 1;
-  margin: auto;
+	grid-row: 1;
+  margin: 30vh auto 30vh auto;
   width: 60vw;
   z-index: 10;
 }
@@ -299,7 +301,6 @@ nav.moment-options ul li.this-moment {
 }
 
 article.story p {
-/*	margin-bottom: 100px;*/
 }
 
 .image-panel aside.more {
