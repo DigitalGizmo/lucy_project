@@ -93,11 +93,13 @@ nav.moment-nav ul li {
 	vertical-align: text-top;
 }
 
-/*-- ---------------- --*/
-/*--   MOMENT BASICS  --*/
-/*-- ---------------- --*/
+/* -------------------- */
+/* ----  MOMENTS   ---- */
+/* -------------------- */
 
-/*-- Moment Title Frames --*/
+/* --------------------------------- */
+/* ------  Moment Title Frames ----- */
+/* --------------------------------- */
 
 .moment-title {
 	height: 100vh;
@@ -171,15 +173,15 @@ nav.moment-options ul li.this-moment {
 	left: 50%;
 }
 
-/* --------------------------------- */
-/*-- Scrolling Moment Story Frames --*/
-/* --------------------------------- */
+/* ----------------------------------- */
+/* -- Scrolling Moment Story Frames -- */
+/* ----------------------------------- */
 .moment-scroll {/* displays less than 800px */
 	background-color: black;
 	position: relative;
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 1fr  1fr; /*  1fr */
+	grid-template-rows: 100vh auto;
 	grid-gap: 0;
 	margin-top: 138px;
 	overflow: hidden;
@@ -188,7 +190,7 @@ nav.moment-options ul li.this-moment {
 
 @media screen and (min-width: 800px) { /* displays larger than 800px */
 	.moment-scroll {
-		grid-template-columns: 75% 25%; /*why can't this be 25%? */
+		grid-template-columns: 75% 25%;
 		grid-template-rows: auto auto;
 	}
 }
@@ -200,55 +202,54 @@ nav.moment-options ul li.this-moment {
 /* for mobile */
 @media screen and (max-width: 799px) { /* displays smaller than 800px */
 	.image-panel {
+	/* put the images in the only column */
 		grid-column: 1;
-		position: relative;
 	}
+	/* fixed container to keep image from scrolling */
 	.image-panel div.image-panel-fixed {
+    height: 50vh;
+		width: 100%;
 		position: fixed;
 	}
-
+	/* No inner div version */
 	.image-panel-image { /* displays smaller than 800px */
-		position: absolute;
+    height: 50vh;
+		width: 100%;
+ 		position: absolute;
 	}
-
+	/* the size has to be declared this third time! */
 	.image-panel-image img {
-        height: 50vh;
-        width: auto;
-        /* width: 100%; don */
-        object-fit: cover;/* working? */  
+    height: 50vh;
+		width: 100%;
+    object-fit: cover;      
 	}
 }
 
 /* for desktop */
 @media screen and (min-width: 800px) { /* displays larger than 800px */
-	/* put the images in the left/only column */
+	/* put the images in the left column */
 	.image-panel {
 		grid-column: 1;
 	}
-
-	/* relative container to hold the inner div */
+	/* fixed container to keep image from scrolling */
 	.image-panel div.image-panel-fixed {
-		/* background-color: darkgoldenrod; */
-        width: 75%;
-		height: calc(100vh - 138px); /* 138 */
+    width: 75%;
+		height: calc(100vh - 138px);
 		position: fixed;
     }
-
 	/* No inner div version */
 	.image-panel-image {
 		width: 100%;
 		height: calc(100vh - 138px); 
 		position: absolute;
 	}
-
-	/* It's true, the size has to be declared this third time! */
+	/* the size has to be declared this third time! */
 	.image-panel-image img {
-        width: 100%;
+    width: 100%;
 		height: calc(100vh - 138px); 
-        /* border: 1px solid #000; */
-        object-fit: cover;      
+    object-fit: cover;      
 	}
-
+	/* More panel */
 	.dons-debug {
 		margin-top: 250px; /* should be something relative */
 		background-color: white;
