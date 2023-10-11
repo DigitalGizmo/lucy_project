@@ -252,16 +252,41 @@ nav.moment-options ul li.this-moment {
 		object-fit: cover;      
 	}
 	/* More panel */
-	.dons-debug {
-		margin-top: 250px; /* should be something relative */
+	.more-container {
+	  border-radius: 0 3px 3px 0;
 		background-color: white;
-		height: 80px;
-		width: 25px;
+  	left: -285px;
+		top: 20vh;
+		height: 300px;
+		width: 250px;
+		padding: 1em;
 		z-index: 99;
 		position: absolute;
+	  -webkit-transition: all 0.6s ease;
+	  -moz-transition: all 0.6s ease;
+	  -o-transition: all 0.6s ease;
+  	}
+	.more-container:hover {
+	  /* opacity: 1; */
+	  left: 0px;
 	}
-	
-	.dons-debug p {
+	.more-tab {
+	  background-color: #146cc1;
+	  border-radius: 0 0 3px 3px;
+  	color: #fff;
+	  padding: 1.25em 1em 0.25em 1em;
+	  position: absolute;
+	  top: 60%;
+	  /*top: 318px;*/
+	  left: 265px;
+	  margin: 0;
+	  /*width: 318px;*/
+	  text-align: center;
+	  transform-origin: 0 0;
+	  transform: rotate(-90deg);
+	}
+
+	.more-container p {
 		margin-left: 8px;
 	}
 }
@@ -307,9 +332,6 @@ nav.moment-options ul li.this-moment {
 article.story p {
 }
 
-.image-panel aside.more {
-	display: none;
-}
 
 /* -------------- */
 /*   TOTAL MORE   */
@@ -320,19 +342,4 @@ article.story p {
 	grid-row: 2;
 	padding: 1em;
 	z-index: 11;
-}
-
-
-/* poaching */
-.dons-debug {
-	margin-top: 250px;
-	background-color: white;
-	height: 80px;
-	width: 100px;
-	z-index: 99;
-	position: absolute;
-}
-
-.dons-debug p {
-	margin-left: 8px;
 }
