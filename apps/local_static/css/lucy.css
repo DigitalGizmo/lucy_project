@@ -251,6 +251,8 @@ nav.moment-options ul li.this-moment {
 		height: calc(100vh - 138px); 
 		object-fit: cover;      
 	}
+}
+
 	/* More panel */
 	.more-container {
 	  border-radius: 0 3px 3px 0;
@@ -260,7 +262,7 @@ nav.moment-options ul li.this-moment {
 		height: 300px;
 		width: 250px;
 		padding: 1em;
-		z-index: 99;
+		z-index: 120;
 		position: absolute;
 	  -webkit-transition: all 0.6s ease;
 	  -moz-transition: all 0.6s ease;
@@ -286,11 +288,10 @@ nav.moment-options ul li.this-moment {
 	  transform: rotate(-90deg);
 	}
 
-	.more-container p {
-		margin-left: 8px;
+	.more-container ul {
+		list-style-type: none;
+		padding-left: 15px;
 	}
-}
-
 /* -------------- */
 /*   STORY TEXT   */
 /* -------------- */
