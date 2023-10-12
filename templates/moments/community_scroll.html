@@ -24,10 +24,10 @@
       '04-house-cutaway-color',
       '05-lucy-hearth'
     ],
-    mores: [
-      'thing 1'
-    ]
+    dummy: 'hello',
+    frames: []
   }"
+  x-init="frames = await (await fetch('/moments/community-frames')).json()"
   @resize.window=" panelHeight = window.innerHeight - 138 "
   @scroll.window="
   scrollNumber = window.pageYOffset,
@@ -55,12 +55,22 @@
         <h4 class="more-tab">More</h4>
         <p><span x-text="imageIndex"></span> | 
           <span x-text="scrollNumber"></span> |
-          <span x-text="panelHeight"></span> 
+          <span x-text="panelHeight"></span> |
+          <span x-text="dummy"></span> 
         </p>
         <h4>More</h4>
+        <p>Who Else?</p>
         <ul>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
+          <li>
+            <a :href="`${frames[0].moreWhoLinks[0].url}`">
+              <span x-text="frames[0].moreWhoLinks[0].title"></span>
+            </a>
+          </li>
+          <li>
+            <a :href="`${frames[0].moreWhoLinks[1].url}`">
+              <span x-text="frames[0].moreWhoLinks[1].title"></span>
+            </a>
+          </li>
           <li><a href="#">link</a></li>
         </ul>
       </div>
