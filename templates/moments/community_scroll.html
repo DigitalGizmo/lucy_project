@@ -24,10 +24,14 @@
       '04-house-cutaway-color',
       '05-lucy-hearth'
     ],
-    dummy: 'hello',
+    isLoading: true,
     frames: []
   }"
-  x-init="frames = await (await fetch('/moments/community-frames')).json()"
+  x-init="
+    const response = await fetch('/moments/community-frames');
+    frames = await response.json();
+    isLoading = false;
+  "
   @resize.window=" panelHeight = window.innerHeight - 138 "
   @scroll.window="
   scrollNumber = window.pageYOffset,
@@ -56,23 +60,27 @@
         <p><span x-text="imageIndex"></span> | 
           <span x-text="scrollNumber"></span> |
           <span x-text="panelHeight"></span> |
-          <span x-text="dummy"></span> 
+          <span x-text="isLoading"></span> 
         </p>
         <h4>More</h4>
-        <p>Who Else?</p>
-        <ul>
-          <li>
-            <a :href="`${frames.community[imageIndex].moreWhoLinks[0].url}`">
-              <span x-text="frames.community[imageIndex].moreWhoLinks[0].title"></span>
-            </a>
-          </li>
-          <li>
-            <a :href="`${frames.community[imageIndex].moreWhoLinks[1].url}`">
-              <span x-text="frames.community[imageIndex].moreWhoLinks[1].title"></span>
-            </a>
-          </li>
-          <li><a href="#">link</a></li>
-        </ul>
+        <template x-if="!isLoading">
+          <div> <!-- more links - single div required in template tag -->
+            <p>Who Else?</p>
+            <ul>
+              <li>
+                <a :href="`${frames.community[imageIndex].moreWhoLinks[0].url}`">
+                  <span x-text="frames.community[imageIndex].moreWhoLinks[0].title"></span>
+                </a>
+              </li>
+              <li>
+                <a :href="`${frames.community[imageIndex].moreWhoLinks[1].url}`">
+                  <span x-text="frames.community[imageIndex].moreWhoLinks[1].title"></span>
+                </a>
+              </li>
+              <li><a href="#">link</a></li>
+            </ul>
+          </div>
+        </template>
       </div>
 
     </div> <!-- /image-panel-outer-div -->
