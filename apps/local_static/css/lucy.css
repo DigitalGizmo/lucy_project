@@ -209,22 +209,28 @@ nav.moment-options ul li.this-moment {
 	}
 	/* fixed container to keep image from scrolling */
 	.image-panel div.image-panel-fixed {
-    height: 60vh;
+		height: 60vh;
 		width: 100%;
 		position: fixed;
 	}
 	/* No inner div version */
 	.image-panel-image { /* displays smaller than 800px */
-    height: 60vh;
+		height: 60vh;
 		width: 100%;
  		position: absolute;
 	}
 	/* the size has to be declared this third time! */
 	.image-panel-image img {
-    height: 60vh;
+		height: 60vh;
 		width: 100%;
-    object-fit: cover;      
+		object-fit: cover;      
 	}
+	/* the size has to be declared this third time! */
+	/* .image-panel-image svg {
+		height: 60vh;
+		width: 100%;
+		object-fit: cover;      
+	} */
 }
 
 /* for desktop */

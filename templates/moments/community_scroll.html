@@ -40,21 +40,36 @@
   ">
   <div class="image-panel"> 
     <div class="image-panel-fixed">
+
       <div class="image-panel-image"
         x-show="imageIndex % 2 === 0" 
         x-transition.opacity.duration.1000ms
       >
-        <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`"/>
+        <!-- <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`"/> -->
         <!-- <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/02-dawn-house-color.jpg`"/> -->
+
+        <svg 
+          width="100%" height="calc(100vh - 138px)" 
+          viewBox="0 0 2000 1286"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <image href="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/02-dawn-house-color.jpg" 
+          width="100%" height="100%" />
+          <rect x="925" y="810" width="175px" height="160px" 
+          fill="#FEDA00" opacity=".3"></rect>
+        </svg>
+
+
       </div>
+
       <div class="image-panel-image"
         x-show="imageIndex  % 2 !== 0" 
         x-transition.opacity.duration.1000ms
       >
-      
         <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`"/>
         <!-- <img :src="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/03-candle-color.jpg`"/> -->
       </div>
+
       <div class="more-container">
         <h4 class="more-tab">More</h4>
         <p><span x-text="imageIndex"></span> | 
