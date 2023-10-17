@@ -50,36 +50,11 @@
         >
           <image :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`" 
           width="100%" height="100%" />
+
           <rect x="925" y="810" width="175px" height="160px" 
           fill="#FEDA00" opacity=".3"></rect>
         </svg>
       </div> <!-- end image-panel-image -->
-
-      <div class="more-container" x-show="imageIndex === 0" >
-        <h4 class="more-tab">More</h4>
-        <p><span x-text="imageIndex"></span> | 
-          <span x-text="scrollNumber"></span> |
-          <span x-text="panelHeight"></span> |
-          <span x-text="isLoading"></span> 
-        </p>
-        <h4>More</h4>
-          <div> 
-            <p>Who Else?</p>
-            <ul>
-              <li>
-                <a href="/people">
-                  Jenny Cole
-                </a>
-              </li>
-              <li><a href="#">
-                Caleb Sharp
-              </a></li>
-            </ul>            
-          </div>
-      </div>
-
-
-
 
       <div class="image-panel-image" x-show="imageIndex === 1" 
         x-transition.opacity.duration.1000ms>
@@ -90,39 +65,14 @@
         >
           <image :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`" 
           width="100%" height="100%" />
+          
           <rect x="625" y="910" width="75px" height="160px" 
           fill="#FEDA00" opacity=".3"></rect>
         </svg>
       </div>
 
-
-        <div class="more-container" x-show="imageIndex === 1">
-          <h4 class="more-tab">More</h4>
-          <p><span x-text="imageIndex"></span> | 
-            <span x-text="scrollNumber"></span> |
-            <span x-text="panelHeight"></span> |
-            <span x-text="isLoading"></span> 
-          </p>
-          <h4>More</h4>
-            <div> 
-              <p>Who Else?</p>
-              <ul>
-                <li>
-                  <a href="/people">
-                    Whitley
-                  </a>
-                </li>
-                <li><a href="#">
-                  Elijah
-                </a></li>
-              </ul>            
-            </div>
-        </div>
-
-
-
-
-      <!-- <div class="more-container">
+      <!-- Single dynamic more box -->
+      <div class="more-container">
         <h4 class="more-tab">More</h4>
         <p><span x-text="imageIndex"></span> | 
           <span x-text="scrollNumber"></span> |
@@ -130,19 +80,24 @@
           <span x-text="isLoading"></span> 
         </p>
         <h4>More</h4>
-          <div> 
-            <p>Who Else?</p>
-            <ul>
-              <template x-for="whoLink in frames.community[imageIndex].moreWhoLinks">
-                <li>
-                  <a :href="`${whoLink.url}`">
-                    <span x-text="whoLink.title"></span>
-                  </a>
-                </li>
-              <li><a href="#">link</a></li>
-            </ul>            
+        <template x-if="!isLoading">
+          <div> <!-- more links - single div required in template tag -->
+            <template x-if="frames.community[imageIndex].moreWhoLinks.length > 0">
+              <p>Who Else?</p>
+            </template>
+              <ul>
+                <template x-for="whoLink in frames.community[imageIndex].moreWhoLinks">
+                  <li>
+                    <a :href="`${whoLink.url}`">
+                      <span x-text="whoLink.title"></span>
+                    </a>
+                  </li>
+                </template>
+                <li><a href="#">link</a></li>
+              </ul>            
           </div>
-      </div> -->
+        </template>
+      </div>
 
     </div> <!-- /image-panel-outer-div -->
   </div><!-- /image-panel -->
