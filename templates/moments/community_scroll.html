@@ -43,31 +43,59 @@
 
       <div class="image-panel-image" x-show="imageIndex === 0" 
         x-transition.opacity.duration.1000ms>
-        <svg 
-          width="100%" height="calc(100vh - 138px)" 
-          viewBox="0 0 2000 1286"
-          preserveAspectRatio="xMidYMid slice"
+        <template x-if="!isLoading">
+        <svg width="100%" height="calc(100vh - 138px)" 
+          viewBox="0 0 2000 1286" preserveAspectRatio="xMidYMid slice"
         >
           <image :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`" 
           width="100%" height="100%" />
-
-          <rect x="925" y="810" width="175px" height="160px" 
-          fill="#FEDA00" opacity=".3"></rect>
-        </svg>
+            <g>
+              <rect x="925" y="810" width="175px" height="160px" 
+              fill="#FEDA00" opacity=".3"></rect>
+            </g>
+          </svg>
+        </template>
       </div> <!-- end image-panel-image -->
 
       <div class="image-panel-image" x-show="imageIndex === 1" 
         x-transition.opacity.duration.1000ms>
-        <svg 
-          width="100%" height="calc(100vh - 138px)" 
-          viewBox="0 0 2000 1286"
-          preserveAspectRatio="xMidYMid slice"
+        <svg width="100%" height="calc(100vh - 138px)" 
+          viewBox="0 0 2000 1286" preserveAspectRatio="xMidYMid slice"
         >
           <image :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`" 
           width="100%" height="100%" />
-          
-          <rect x="625" y="910" width="75px" height="160px" 
-          fill="#FEDA00" opacity=".3"></rect>
+          <g>
+            <rect x="625" y="910" width="75px" height="160px" 
+            fill="#FEDA00" opacity=".3"></rect>
+          </g>
+        </svg>
+      </div>
+
+      <div class="image-panel-image" x-show="imageIndex === 2" 
+        x-transition.opacity.duration.1000ms>
+        <svg width="100%" height="calc(100vh - 138px)" 
+          viewBox="0 0 2000 1286" preserveAspectRatio="xMidYMid slice"
+        >
+          <image :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`" 
+          width="100%" height="100%" />
+          <g>
+            <rect x="125" y="410" width="125px" height="100px" 
+            fill="#FEDA00" opacity=".3"></rect>
+          </g>
+        </svg>
+      </div>
+
+      <div class="image-panel-image" x-show="imageIndex === 3" 
+        x-transition.opacity.duration.1000ms>
+        <svg width="100%" height="calc(100vh - 138px)" 
+          viewBox="0 0 2000 1286" preserveAspectRatio="xMidYMid slice"
+        >
+          <image :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`" 
+          width="100%" height="100%" />
+          <g>
+            <rect x="325" y="910" width="105px" height="60px" 
+            fill="#FEDA00" opacity=".3"></rect>
+          </g>
         </svg>
       </div>
 
@@ -83,18 +111,29 @@
         <template x-if="!isLoading">
           <div> <!-- more links - single div required in template tag -->
             <template x-if="frames.community[imageIndex].moreWhoLinks.length > 0">
-              <p>Who Else?</p>
+            <p>Who Else?</p>
             </template>
-              <ul>
-                <template x-for="whoLink in frames.community[imageIndex].moreWhoLinks">
-                  <li>
-                    <a :href="`${whoLink.url}`">
-                      <span x-text="whoLink.title"></span>
-                    </a>
-                  </li>
-                </template>
-                <li><a href="#">link</a></li>
-              </ul>            
+            <ul>
+              <template x-for="link in frames.community[imageIndex].moreWhoLinks">
+                <li>
+                  <a :href="`${link.url}`">
+                    <span x-text="link.title"></span>
+                  </a>
+                </li>
+              </template>
+            </ul>            
+            <template x-if="frames.community[imageIndex].moreTopicLinks.length > 0">
+            <p>Topics and Ideas</p>
+            </template>
+            <ul>
+              <template x-for="link in frames.community[imageIndex].moreTopicLinks">
+                <li>
+                  <a :href="`${link.url}`">
+                    <span x-text="link.title"></span>
+                  </a>
+                </li>
+              </template>
+            </ul>            
           </div>
         </template>
       </div>

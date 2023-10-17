@@ -1,33 +1,26 @@
 {
     "community": [
         {
-            "imageName": "02-dawn-house-color",
-            "storyText": "To be used later, in a loop",
+            "imageName": "05-lucy-hearth",
+            "storyText": "Frame index 1 -- To be used later, in a loop",
             "moreWhoLinks": [
-                {"title": "Jenny Cole", 
-                    "type": "internal", "url": "/people"},
-                {"title": "Cesar", 
-                    "type": "external", "url": "https://digitalgizmo.com/"}
+                {"title": "Lucy", "url": "/people"},            
+                {"title": "Cesar", "url": "/people"}            
+
             ],
             "moreTopicLinks": [
-                {"title": "Sleeping Arrangements", 
-                    "type": "external", "url": "https://digitalgizmo.com/"}            
+                {"title": "Women's work", "url": "/people"}            
             ]
         },
         {
-            "imageName": "03-candle-color",
-            "storyText": "Frame index 1 -- To be used later, in a loop",
+            "imageName": "02-dawn-house-color",
+            "storyText": "To be used later, in a loop",
             "moreWhoLinks": [
-                {"title": "Phillis Wheatley", 
-                    "type": "internal", "url": "/people"},
-                {"title": "Cesar", 
-                    "type": "external", "url": "https://digitalgizmo.com/"},
-                {"title": "Sharp", 
-                    "type": "external", "url": "https://digitalgizmo.com/"}
+                {"title": "Jenny Cole", "url": "/people"},
+                {"title": "Cesar", "url": "/people"}
             ],
             "moreTopicLinks": [
-                {"title": "Women's work", 
-                    "type": "external", "url": "https://digitalgizmo.com/"}            
+                {"title": "Sleeping Arrangements", "url": "/people"}            
             ]
         },
         {
@@ -35,18 +28,20 @@
             "storyText": "Frame index 1 -- To be used later, in a loop",
             "moreWhoLinks": [],
             "moreTopicLinks": [
-                {"title": "Women's work", 
-                    "type": "external", "url": "https://digitalgizmo.com/"}            
+                {"title": "Another topic", "url": "/people"}            
             ]
         },
         {
-            "imageName": "05-lucy-hearth",
+            "imageName": "03-candle-color",
             "storyText": "Frame index 1 -- To be used later, in a loop",
-            "moreWhoLinks": [],
+            "moreWhoLinks": [
+                {"title": "Phillis Wheatley", "url": "/people"},
+                {"title": "Cesar", "url": "/people"},
+                {"title": "Sharp", "url": "/people"}
+            ],
             "moreTopicLinks": [
-                {"title": "Women's work", 
-                    "type": "external", "url": "https://digitalgizmo.com/"}            
-            ]
+                {"title": "Women's work", "url": "/people"}            
+            ]       
         }
     ]
 }
