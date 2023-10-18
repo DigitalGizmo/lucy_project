@@ -9,5 +9,6 @@ urlpatterns = [
     path("community", views.MomentTitlelView.as_view(), name="community"),
     path("community-scroll", views.MomentTemplatelView.as_view(), name="community_scroll"),
     path("community-scroll-model", views.MomentModelTemplatelView.as_view(), name="community_scroll_model"),
-    path("community-frames", views.FrameJsonView, name="community-frames")
+    path("community-frames", views.FrameJsonView, name="community-frames"),
+    path("more", views.MorePoplView.as_view(), name='more_pop'),
 ]

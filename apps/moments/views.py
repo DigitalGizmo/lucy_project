@@ -19,6 +19,11 @@ class MomentTemplatelView(TemplateView):
 class MomentModelTemplatelView(TemplateView):
     template_name = "moments/community_scroll_model.html"
 
+class MorePoplView(TemplateView):
+    # model = SourceEntry 
+    # template_name = 'sources/entry_detail.html'
+    template_name = 'moments/more_pop.html'
+
 def FrameJsonView(request):
     CURR_DIR = Path(__file__).resolve().parent
     # print(f"path:{CURR_DIR / 'frames.json'}" )

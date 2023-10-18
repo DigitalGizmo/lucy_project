@@ -39,65 +39,75 @@
   imageIndex = Math.trunc((scrollNumber + panelHeight - 125)/(panelHeight))
   ">
   <div class="image-panel"> 
-    <div class="image-panel-fixed">
+    <div class="image-panel-fixed"
+      hx-target="#slimpop-container"
+      hx-swap="outerHTML"    
+    >
 
       <div class="image-panel-image" x-show="imageIndex === 0" 
         x-transition.opacity.duration.1000ms>
-        <template x-if="!isLoading">
-        <svg width="100%" height="calc(100vh - 138px)" 
+        <svg 
           viewBox="0 0 2000 1286" preserveAspectRatio="xMidYMid slice"
         >
           <image :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`" 
           width="100%" height="100%" />
             <g>
-              <rect x="925" y="810" width="175px" height="160px" 
-              fill="#FEDA00" opacity=".3"></rect>
+              <a hx-get="/moments/more">
+                <rect x="925" y="810" width="175px" height="160px" 
+                fill="#FEDA00" opacity=".3"></rect>
+              </a>
             </g>
           </svg>
-        </template>
       </div> <!-- end image-panel-image -->
 
       <div class="image-panel-image" x-show="imageIndex === 1" 
         x-transition.opacity.duration.1000ms>
-        <svg width="100%" height="calc(100vh - 138px)" 
+        <svg 
           viewBox="0 0 2000 1286" preserveAspectRatio="xMidYMid slice"
         >
           <image :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`" 
           width="100%" height="100%" />
           <g>
-            <rect x="625" y="910" width="75px" height="160px" 
-            fill="#FEDA00" opacity=".3"></rect>
+            <a hx-get="/moments/more">
+              <rect x="625" y="910" width="75px" height="160px" 
+              fill="#FEDA00" opacity=".3"></rect>
+            </a>
           </g>
         </svg>
       </div>
 
       <div class="image-panel-image" x-show="imageIndex === 2" 
         x-transition.opacity.duration.1000ms>
-        <svg width="100%" height="calc(100vh - 138px)" 
+        <svg 
           viewBox="0 0 2000 1286" preserveAspectRatio="xMidYMid slice"
         >
           <image :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`" 
           width="100%" height="100%" />
           <g>
-            <rect x="125" y="410" width="125px" height="100px" 
-            fill="#FEDA00" opacity=".3"></rect>
+            <a hx-get="/moments/more">
+              <rect x="125" y="410" width="125px" height="100px" 
+              fill="#FEDA00" opacity=".3"></rect>
+            </a>
           </g>
         </svg>
       </div>
 
       <div class="image-panel-image" x-show="imageIndex === 3" 
         x-transition.opacity.duration.1000ms>
-        <svg width="100%" height="calc(100vh - 138px)" 
+        <svg 
           viewBox="0 0 2000 1286" preserveAspectRatio="xMidYMid slice"
         >
           <image :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`" 
           width="100%" height="100%" />
           <g>
-            <rect x="325" y="910" width="105px" height="60px" 
-            fill="#FEDA00" opacity=".3"></rect>
+            <a hx-get="/moments/more">
+              <rect x="325" y="910" width="105px" height="60px" 
+              fill="#FEDA00" opacity=".3"></rect>
+            </a>
           </g>
         </svg>
       </div>
+
 
       <!-- Single dynamic more box -->
       <div class="more-container">
@@ -108,14 +118,20 @@
           <span x-text="isLoading"></span> 
         </p>
         <h4>More</h4>
+        <p><a hx-get="/moments/more"> htmx</a></p>
         <template x-if="!isLoading">
           <div> <!-- more links - single div required in template tag -->
             <template x-if="frames.community[imageIndex].moreWhoLinks.length > 0">
-            <p>Who Else?</p>
+            <p>Who Else? <a hx-get="/moments/more"> htmx</a></p>
             </template>
             <ul>
               <template x-for="link in frames.community[imageIndex].moreWhoLinks">
-                <li>
+                <li
+                hx-target="#slimpop-container"
+                hx-swap="outerHTML"    >
+                  <a hx-get="/moments/more"> |
+                    htmx
+                  </a>
                   <a :href="`${link.url}`">
                     <span x-text="link.title"></span>
                   </a>
@@ -143,9 +159,16 @@
 
   <div class="story-frames">
 
-    <article class="story">
+    <article class="story"
+    hx-target="#slimpop-container"
+    hx-swap="outerHTML"        
+    >
       <p>Enter=0 Dark. In colonial New England, work days for enslaved people began long before daybreak — long before their enslavers
-      got up to begin their own work days.</p>      
+      got up to begin their own work days.
+      <a hx-get="/moments/more"> |
+        htmx
+      </a>
+    </p>      
     </article><!-- Frame1 : END -->
 
     <article class="story">
@@ -198,5 +221,19 @@
   </article> <!--/total-more -->
 
 </section> <!--/moment-scroll-->
+
+<div id="slimpop-overlay" class="hidden">
+	<div 
+    id="slimpop-container" class="slimpop-basic"
+    hx-target="this">
+      will be replaced
+  </div>
+</div>
+
+<!-- <template x-if="!isLoading">
+  <script defer src="{% static 'js/htmx.min.js' %}"></script>
+  <script defer src="{% static 'js/lucy.js' %}"></script>
+</template> -->
+
 
 {% endblock moment %}
