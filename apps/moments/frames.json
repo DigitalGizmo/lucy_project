@@ -19,9 +19,7 @@
                 {"title": "Jenny Cole", "url": "/people"},
                 {"title": "Cesar", "url": "/people"}
             ],
-            "moreTopicLinks": [
-                {"title": "Sleeping Arrangements", "url": "/people"}            
-            ]
+            "moreTopicLinks": []
         },
         {
             "imageName": "04-house-cutaway-color",

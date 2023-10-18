@@ -118,38 +118,34 @@
           <span x-text="isLoading"></span> 
         </p>
         <h4>More</h4>
-        <p><a hx-get="/moments/more"> htmx</a></p>
         <template x-if="!isLoading">
           <div> <!-- more links - single div required in template tag -->
             <template x-if="frames.community[imageIndex].moreWhoLinks.length > 0">
-            <p>Who Else? <a hx-get="/moments/more"> htmx</a></p>
-            </template>
-            <ul>
-              <template x-for="link in frames.community[imageIndex].moreWhoLinks">
-                <li
-                hx-target="#slimpop-container"
-                hx-swap="outerHTML"    >
-                  <a hx-get="/moments/more"> |
-                    htmx
-                  </a>
-                  <a :href="`${link.url}`">
-                    <span x-text="link.title"></span>
-                  </a>
-                </li>
-              </template>
-            </ul>            
+              <div> <!-- again, single div required in template tag -->
+                <p>Who Else?</p>
+                <ul >
+                  <template x-for="link in frames.community[imageIndex].moreWhoLinks">
+                    <li>
+                      <a :hx-get="'/moments/more'"  x-text="link.title"
+                        x-init="$nextTick(() => htmx.process($el))"></a>
+                    </li>
+                  </template>
+                </ul>            
+              </div>
+            </template>           
             <template x-if="frames.community[imageIndex].moreTopicLinks.length > 0">
-            <p>Topics and Ideas</p>
-            </template>
-            <ul>
-              <template x-for="link in frames.community[imageIndex].moreTopicLinks">
-                <li>
-                  <a :href="`${link.url}`">
-                    <span x-text="link.title"></span>
-                  </a>
-                </li>
-              </template>
-            </ul>            
+              <div>
+                <p>Topics and Ideas</p>
+                <ul>
+                  <template x-for="link in frames.community[imageIndex].moreTopicLinks">
+                    <li>
+                      <a :hx-get="'/moments/more'" x-text="link.title"
+                        x-init="$nextTick(() => htmx.process($el))"></a>
+                    </li>
+                  </template>
+                </ul> 
+              </div>
+            </template>           
           </div>
         </template>
       </div>
