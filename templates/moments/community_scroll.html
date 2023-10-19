@@ -25,7 +25,9 @@
       '05-lucy-hearth'
     ],
     isLoading: true,
-    frames: []
+    frames: [],
+    layerTransX: 0,
+    layerTransY: 0,
   }"
   x-init="
     const response = await fetch('/moments/community-frames');
@@ -37,6 +39,8 @@
   scrollNumber = window.pageYOffset,
   // Adding panelHeight to scollNumber make quotient = 1 sooner
   imageIndex = Math.trunc((scrollNumber + panelHeight - 125)/(panelHeight))
+  layerTransX = scrollNumber/4
+  layerTransY = -scrollNumber/7
   ">
   <div class="image-panel"> 
     <div class="image-panel-fixed"
@@ -51,6 +55,11 @@
         >
           <image :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`" 
           width="100%" height="100%" />
+
+          <image class="image-layer" width="100%" height="100%" x="-100"
+            :transform="`translate(${layerTransX} ${layerTransY})`"
+            href="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/leaves-only.png" 
+           />
             <g>
               <a hx-get="/moments/more">
                 <rect x="925" y="810" width="175px" height="160px" 
@@ -67,6 +76,11 @@
         >
           <image :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`" 
           width="100%" height="100%" />
+
+          <image class="image-layer" width="100%" height="100%"  x="-100"
+            :transform="`translate(${layerTransX} ${layerTransY})`"
+            href="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/leaves-only.png" 
+           />          
           <g>
             <a hx-get="/moments/more">
               <rect x="625" y="910" width="75px" height="160px" 
@@ -83,6 +97,12 @@
         >
           <image :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`" 
           width="100%" height="100%" />
+
+          <image class="image-layer" width="100%" height="100%"  x="-100"
+            :transform="`translate(${layerTransX} ${layerTransY})`"
+            href="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/leaves-only.png" 
+           />
+
           <g>
             <a hx-get="/moments/more">
               <rect x="125" y="410" width="125px" height="100px" 
