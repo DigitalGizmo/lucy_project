@@ -28,6 +28,7 @@
     frames: [],
     layerTransX: 0,
     layerTransY: 0,
+    smokeIndex: 1
   }"
   x-init="
     const response = await fetch('/moments/community-frames');
@@ -41,6 +42,7 @@
   imageIndex = Math.trunc((scrollNumber + panelHeight - 125)/(panelHeight))
   layerTransX = scrollNumber/4
   layerTransY = -scrollNumber/7
+  smokeIndex = 1 + Math.trunc((scrollNumber - 135)/250)
   ">
   <div class="image-panel"> 
     <div class="image-panel-fixed"
@@ -76,11 +78,35 @@
         >
           <image :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`" 
           width="100%" height="100%" />
-
+          <!-- leaves -->
           <image class="image-layer" width="100%" height="100%"  x="-100"
             :transform="`translate(${layerTransX} ${layerTransY})`"
             href="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/leaves-only.png" 
-           />          
+           />    
+          <!-- smoke    -->
+          <g x-show="smokeIndex === 1"
+            x-transition.opacity.duration.2000ms>
+            <image  width="463" height="313" 
+            :transform="`translate(590 64)`"
+            href="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/smoke1.png" 
+           />   
+          </g>
+          <g x-show="smokeIndex === 2"
+            x-transition.opacity.duration.2000ms>
+            <image  width="427" height="293" 
+            :transform="`translate(590 84)`"
+            href="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/smoke2.png" 
+            />   
+          </g>
+          <g x-show="smokeIndex === 3"
+            x-transition.opacity.duration.2000ms>
+            <image  width="568" height="362" 
+            :transform="`translate(590 15)`"
+            href="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/smoke3.png" 
+            />   
+          </g>
+
+
           <g>
             <a hx-get="/moments/more">
               <rect x="625" y="910" width="75px" height="160px" 
@@ -132,7 +158,7 @@
       <!-- Single dynamic more box -->
       <div class="more-container">
         <h4 class="more-tab">More</h4>
-        <p><span x-text="imageIndex"></span> | 
+        <p><span x-text="smokeIndex"></span> | 
           <span x-text="scrollNumber"></span> |
           <span x-text="panelHeight"></span> |
           <span x-text="isLoading"></span> 
