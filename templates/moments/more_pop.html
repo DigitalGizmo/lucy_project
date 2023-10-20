@@ -1,30 +1,25 @@
-<div id="slimpop-container" class="slimpop-basic">
-    <div id="slimpop-wrapper">
+<div id="modal-container" class="modal-basic">
+  <div id="modal-wrapper">
 
-        <div class="slim-info">
-            <p class="slimpop-close">        
-              <a hx-target="#close-button" hx-swap="outerHTML">
-                {% comment %} Need to find solution for hx-get {% endcomment %}
-                <span 
-                  id="close-button" 
-                  class="close"    
-                  hx-get="/moments/more" 
-                  hx-trigger="click"
-                  hx-swap="outerHTML"          
-                  >
-                  Close
-                </span>
-              </a>
-            </p>
+    <div>
+      <a hx-target="#close-button" hx-swap="outerHTML">
+        {% comment %} Need to find solution for hx-get {% endcomment %}
+        <span 
+          id="close-button" 
+          class="close"    
+          hx-get="/moments/more" 
+          hx-trigger="click"
+          hx-swap="outerHTML"          
+          >
+        </span>
+      </a>
             
-            <div class="slim-entry">
-              <h4>More</h4>
-              <p class="entry-text">Some text</p>
-            </div>
-        
+      <div class="more-content">
+        <h4>More</h4>
+        <p>Some text</p>
+      </div><!-- /more-content -->
 
-          </div><!-- /slim-info -->
+    </div><!-- / -->
           
-
-    </div><!--slimpop-wrapper -->
-</div> <!-- slimpop-container -->
+  </div><!-- /modal-wrapper -->
+</div> <!-- /#modal-container /.modal-basic -->

@@ -200,8 +200,8 @@ nav.moment-options ul li.this-moment {
 /*  IMAGES  */
 /* -------- */
 
-/* for mobile */
-@media screen and (max-width: 799px) { /* displays smaller than 800px */
+/* for MOBILE: displays smaller than 800px */
+@media screen and (max-width: 799px) {
 	.image-panel {
 	/* put the images in the only column */
 		grid-column: 1;
@@ -213,7 +213,7 @@ nav.moment-options ul li.this-moment {
 		width: 100%;
 		position: fixed;
 	}
-	/* No inner div version */
+	/* no inner div version */
 	.image-panel-image { /* displays smaller than 800px */
 		height: 60vh;
 		width: 100%;
@@ -225,15 +225,15 @@ nav.moment-options ul li.this-moment {
 		width: 100%;
 		object-fit: cover;      
 	}
-	/* the size has to be declared this third time! */
+	/* the size has to be declared this fourth time! */
 	.image-panel-image svg {
 		height: 60vh;
 		width: 100%;
 	}
 }
 
-/* for desktop */
-@media screen and (min-width: 800px) { /* displays larger than 800px */
+/* for DESKTOP: displays larger than 800px */
+@media screen and (min-width: 800px) {
 	/* put the images in the left column */
 	.image-panel {
 		grid-column: 1;
@@ -244,7 +244,7 @@ nav.moment-options ul li.this-moment {
 		height: calc(100vh - 138px);
 		position: fixed;
     }
-	/* No inner div version */
+	/* no inner div version */
 	.image-panel-image {
 		width: 100%;
 		height: calc(100vh - 138px); 
@@ -256,56 +256,60 @@ nav.moment-options ul li.this-moment {
 		height: calc(100vh - 138px); 
 		object-fit: cover;      
 	}
+	/* the size has to be declared this fourth time! */
 	.image-panel-image svg {
 		width: 100%;
 		height: calc(100vh - 138px);    
 	}	
 }
 
-	/* More panel */
-	.more-container {
-	  border-radius: 0 3px 3px 0;
-		background-color: white;
-  	left: -285px;
-		top: 20vh;
-		height: 300px;
-		width: 250px;
-		padding: 1em;
-		z-index: 120;
-		position: absolute;
-	  -webkit-transition: all 0.6s ease;
-	  -moz-transition: all 0.6s ease;
-	  -o-transition: all 0.6s ease;
-  	}
-	.more-container:hover {
-	  /* opacity: 1; */
-	  left: 0px;
-	}
-	.more-tab {
-	  background-color: #146cc1;
-	  border-radius: 0 0 3px 3px;
-  	color: #fff;
-	  padding: 1.25em 1em 0.25em 1em;
-	  position: absolute;
-	  top: 60%;
-	  /*top: 318px;*/
-	  left: 265px;
-	  margin: 0;
-	  /*width: 318px;*/
-	  text-align: center;
-	  transform-origin: 0 0;
-	  transform: rotate(-90deg);
-	}
+/* More panel */
+.more-container {
+  border-radius: 0 3px 3px 0;
+	background-color: white;
+	left: -285px;
+	top: 20vh;
+	height: 300px;
+	width: 250px;
+	padding: 1em;
+	z-index: 120;
+	position: absolute;
+  -webkit-transition: all 0.6s ease;
+  -moz-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+}
 
-	.more-container ul {
-		list-style-type: none;
-		padding-left: 15px;
-	}
+.more-container:hover {
+  /* opacity: 1; */
+  left: 0px;
+}
+
+.more-tab {
+  background-color: #146cc1;
+  border-radius: 0 0 3px 3px;
+	color: #fff;
+  padding: 1.25em 1em 0.25em 1em;
+  position: absolute;
+  top: 60%;
+  /*top: 318px;*/
+  left: 265px;
+  margin: 0;
+  /*width: 318px;*/
+  text-align: center;
+  transform-origin: 0 0;
+  transform: rotate(-90deg);
+}
+
+.more-container ul {
+	list-style-type: none;
+	padding-left: 15px;
+}
+
 /* -------------- */
 /*   STORY TEXT   */
 /* -------------- */
-
-.story-frames { /* displays less than 800px */
+/* for MOBILE: displays smaller than 800px */
+.story-frames { 
 	grid-column: 1;
 	grid-row: 1;
 	margin: 30vh auto 30vh auto;
@@ -313,23 +317,25 @@ nav.moment-options ul li.this-moment {
 	z-index: 10;
 }
 
-@media screen and (min-width: 800px) { /* displays larger than 800px */
+/* for DESKTOP: displays larger than 800px */
+@media screen and (min-width: 800px) {
 	.story-frames {
-		background-color: yellow;
+		background-color: white;
 		grid-column: 2;		
 		height: 100%;
 		margin: auto;
 		max-width: 100%;
-/*		overflow: auto;*/
+/*	overflow: auto;*/
 	}
 }
 
-.story-frames article.story {/* displays less than 800px */
+.story-frames article.story {/* displays smaller than 800px */
 	/* margin-bottom: 200px; */
 	margin-bottom: calc(100vh - 250px);
-	background-color: pink;
+	background: rgba(256, 256, 256, .8);
 	padding: 1em;
 }
+
 @media screen and (min-width: 800px) { /* displays larger than 800px */
 	.story-frames article.story {
 	  /* margin-bottom: 200px; */
@@ -339,10 +345,6 @@ nav.moment-options ul li.this-moment {
 	  z-index: 1;
 	}
 }
-
-article.story p {
-}
-
 
 /* -------------- */
 /*   TOTAL MORE   */
@@ -355,112 +357,72 @@ article.story p {
 	z-index: 11;
 }
 
-/* -------------- */
-/*   SLIM POPS   */
-/* -------------- */
+/* ---------------------- */
+/*   MODAL MORE WINDOWS   */
+/* ---------------------- */
 .hidden {
-    display: none;
+  display: none;
 }
 
 .unhidden {
-    display: block;
+  display: block;
 }
 
-#slimpop-overlay {
-    background: url(images/overlay.png) repeat;
-    cursor: pointer;
-    height: 100%;
-    left: 0;
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    z-index: 99;
+#modal-overlay {
+  background: url(images/overlay.png) repeat;
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 99;
 }
 
-#slimpop-wrapper {
-    background-color: #fff;
-    border: 1px solid #CCB02F;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.75);
-    overflow: auto;
+#modal-wrapper {
+  background-color: white;
+  border: 1px solid lightgrey;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.75);
+  overflow: auto;
+  padding: 1em;
 }
 
-/* JavaScript assigns this (or .hidden) to slimpop-container */
-.slimpop-basic {
-    bottom: 0;
-    display: block;
-    left: 0;
-    margin: auto;
-    overflow-x: hidden;
-    overflow-y: auto;
-    position: fixed;
-    /* this positions the slimpop relative to viewport, it won't scroll with the page */
-    right: 0;
-    top: 160px;
-    z-index: 100;
-    max-height: 85%;
-    width: 65%;
-}
-
-.slim-info {
-	display: grid;
-	grid-template-columns: 45% 45%;
-	grid-auto-rows: auto;
-	grid-column-gap: 5%;
-    /* padding: 2em 3em; */
-    padding: 1em 3em 0em;
-    /* don adding */
-    /* position: absolute;
-    height: 20vh; */
-}
-
-.slimpop-close {
-    font-size: .9em;
-    grid-column: 2;
-    grid-row: 1;
-    margin: 0;
-    position: relative;
+/* JavaScript assigns this (or .hidden) to modal container */
+.modal-basic {
+  bottom: 0;
+  display: block;
+  left: 0;
+  margin: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;/* this positions the modal window relative to viewport, it won't scroll with the page */  
+  right: 0;
+  top: 160px;
+  z-index: 100;
+  max-height: 85%;
+  width: 65%;
 }
 
 .close { 
   cursor:pointer;
 }
- .close:after, .close:before {
-    content:"";
-    height:20px;
-    width:20px;
-    border-top:1px solid #000;
-    position:absolute;
-    top:10px;
-    right:-8px;
-    rotate: -45deg;
+
+.close:after, .close:before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  border-top: 1px solid #000;
+  position: absolute;
+  top: 10px;
+  right: -8px;
+  rotate: -45deg;
 }
       
 .close:before {
-    right:6px;
-    rotate: 45deg;
-  }
+  right: 6px;
+  rotate: 45deg;
+}
   
 .close:hover {	
-    opacity: 0.3;
-}
-  
-h1.slim-title {
-    grid-column: 1;
-    grid-row: 1;
-    margin-top: 0;
-}
-
-.slim-entry {
-    grid-column: 1;
-    grid-row: 2;	
-}
-
-.slim-entry p {
-	font-size: 1.15em;
-	margin: 0;
-}
-
-.slim-details {
-    grid-column: 2;
-    grid-row: 2;	
+  opacity: 0.3;
 }
