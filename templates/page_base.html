@@ -2,27 +2,28 @@
 {% load static %}
 
 {% block sub_base %}
-<header id="header">
-    <h3><a href="{% url 'sitewide:home' %}">Lucy Terry Prince</a></h3>
+<section class="wireframe-wrapper">
+	<header id="header">
+	    <h3><a href="{% url 'sitewide:home' %}">Lucy Terry Prince</a></h3>
 
-	{% include "_main_nav.html" %}
+		{% include "_main_nav.html" %}
 
-	<h1>{% block page_title %} Title{% endblock %}</h1>
-</header>
+		<h1>{% block page_title %} Title{% endblock %}</h1>
+	</header>
 
-<section class="wrapper">
-	<p class="breadcrumbs">
-		{% block breadcrumbs %}
+	<section class="wrapper">
+		<p class="breadcrumbs">
+			{% block breadcrumbs %}
+
+			{% endblock %}
+		</p>
+		{% block content %}
+
+		Content goes here
 
 		{% endblock %}
-	</p>
-	{% block content %}
-
-	Content goes here
-
-	{% endblock %}
-</section><!-- /wrapper -->
-
+	</section><!-- /wrapper -->
+</section><!-- /wireframe-wrapper -->
 {% endblock sub_base %}
 
 {% block slim_pop %}

@@ -6,11 +6,14 @@ body {
 	margin: 0;
 }
 
+section.wireframe-wrapper {
+	padding: 0 1em;
+}
+
 header#header {
   background-color: white;
 	border-bottom: 1px solid lightgrey;
   height: 137px;
-	padding: 0 1em;
   position: fixed;
   top: 0;
   width: 100%;
@@ -28,6 +31,7 @@ h1, h2, h3, h4 {
 h1 {
 	font-size: 3em;
 	font-weight: normal;
+	margin: 0;
 }
 
 a:link {
@@ -49,17 +53,18 @@ a:visited {
 }
 /* addition since the fork in the style road */
 .global-nav {
-	margin-bottom: -14px;
+/*	margin-bottom: -14px;*/
 }
 @media screen and (min-width: 800px) { /* displays larger than 800px */
 	.global-nav {
-		margin-bottom: unset;
+		margin-bottom: 1em;
 	}
 }
 /* end addition */
 
 .global-nav ul {
 	list-style: none;
+	margin: 0;
 	padding: 0;
 }
 
@@ -70,9 +75,14 @@ a:visited {
 	padding: 0.25em;
 }
 
+section.wrapper {
+	margin-top: 160px;
+}
+
 nav.moment-nav {/* for mini-nav */
-	width: 100%;
+	margin-left: -1em;
 	overflow-x: scroll;
+	width: 100%;
 }
 
 nav.moment-nav ul {
@@ -97,6 +107,9 @@ nav.moment-nav ul li {
 /* -------------------- */
 /* ----  MOMENTS   ---- */
 /* -------------------- */
+.moment-header {
+	padding: 0 1em;
+}
 
 /* --------------------------------- */
 /* ------  Moment Title Frames ----- */
@@ -104,12 +117,15 @@ nav.moment-nav ul li {
 
 .moment-title {
 	height: 100vh;
+	margin-top: 138px;
 	position: relative;
 	text-align: center;
 }
 
 .title-community {
 	background-image: url('http://lucy-proto.deerfield-ma.org/assets/moments/images/community/02-dawn-house-color.jpg');
+	background-size: cover;
+	background-position: center;
 }
 
 .moment-title h1 {
@@ -219,13 +235,13 @@ nav.moment-options ul li.this-moment {
 		width: 100%;
  		position: absolute;
 	}
-	/* the size has to be declared this third time! */
+	/* the size has to be declared this third time!
 	.image-panel-image img {
 		height: 60vh;
 		width: 100%;
 		object-fit: cover;      
-	}
-	/* the size has to be declared this fourth time! */
+	} */
+	/* the size has to be declared this third time! */
 	.image-panel-image svg {
 		height: 60vh;
 		width: 100%;
@@ -250,13 +266,13 @@ nav.moment-options ul li.this-moment {
 		height: calc(100vh - 138px); 
 		position: absolute;
 	}
-	/* the size has to be declared this third time! */
+	/* the size has to be declared this third time!
 	.image-panel-image img {
 		width: 100%;
 		height: calc(100vh - 138px); 
 		object-fit: cover;      
-	}
-	/* the size has to be declared this fourth time! */
+	} */
+	/* the size has to be declared this third time! */
 	.image-panel-image svg {
 		width: 100%;
 		height: calc(100vh - 138px);    
