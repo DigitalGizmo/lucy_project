@@ -220,13 +220,13 @@ nav.moment-options ul li.this-moment {
  		position: absolute;
 	}
 	/* the size has to be declared this third time! */
-	.image-panel-image img {
+	/* .image-panel-image img {
 		height: 60vh;
 		width: 100%;
 		object-fit: cover;      
-	}
+	} */
 	/* the size has to be declared this fourth time! */
-	.image-panel-image svg {
+	.image-panel svg {
 		height: 60vh;
 		width: 100%;
 	}
@@ -251,11 +251,11 @@ nav.moment-options ul li.this-moment {
 		position: absolute;
 	}
 	/* the size has to be declared this third time! */
-	.image-panel-image img {
+	/* .image-panel-image img {
 		width: 100%;
 		height: calc(100vh - 138px); 
 		object-fit: cover;      
-	}
+	} */
 	/* the size has to be declared this fourth time! */
 	.image-panel-image svg {
 		width: 100%;
