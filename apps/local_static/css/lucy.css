@@ -235,14 +235,14 @@ nav.moment-options ul li.this-moment {
 		width: 100%;
  		position: absolute;
 	}
-	/* the size has to be declared this third time!
-	.image-panel-image img {
+	/* the size has to be declared this third time! */
+	/* .image-panel-image img {
 		height: 60vh;
 		width: 100%;
 		object-fit: cover;      
 	} */
-	/* the size has to be declared this third time! */
-	.image-panel-image svg {
+	/* the size has to be declared this fourth time! */
+	.image-panel svg {
 		height: 60vh;
 		width: 100%;
 	}

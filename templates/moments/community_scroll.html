@@ -47,113 +47,63 @@
   <div class="image-panel"> 
     <div class="image-panel-fixed"
       hx-target="#modal-container"
-      hx-swap="outerHTML"    
-    >
+      hx-swap="outerHTML"  >
 
-      <div class="image-panel-image" x-show="imageIndex === 0" 
-        x-transition.opacity.duration.1000ms>
-        <svg 
-          viewBox="0 0 2000 1286" preserveAspectRatio="xMidYMid slice"
-        >
-          <image :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`" 
+    <div class="image-panel-image">
+
+      <svg viewBox="0 0 2000 1286" preserveAspectRatio="xMidYMid slice">
+
+        <image 
+        x-show="imageIndex === 0" 
+        x-transition.opacity.duration.1500ms
+        :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/02-dawn-house-color.jpg`" 
+          width="100%" height="100%" />
+  
+        <image x-show="imageIndex === 1" 
+        x-transition.opacity.duration.1500ms
+        :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/03-candle-color.jpg`" 
           width="100%" height="100%" />
 
+        <image x-show="imageIndex === 2" 
+        x-transition.opacity.duration.1500ms
+        :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/04-house-cutaway-color.jpg`" 
+          width="100%" height="100%" />
+
+        <image x-show="imageIndex === 3" 
+        x-transition.opacity.duration.1500ms
+        :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/05-lucy-hearth.jpg`" 
+          width="100%" height="100%" />
+
+        <!-- end sequence of images and hotspots -->
+        <g x-show="imageIndex === 0" 
+        x-transition.opacity.duration.1500ms>
+          <a hx-get="/moments/more">
+            <rect x="925" y="810" width="175px" height="160px" 
+            fill="#FEDA00" opacity=".3"></rect>
+          </a>
+        </g>
+
+        <g x-show="imageIndex === 1" 
+        x-transition.opacity.duration.1500ms>
+          <a hx-get="/moments/more">
+            <rect x="625" y="910" width="75px" height="160px" 
+            fill="#FEDA00" opacity=".3"></rect>
+          </a>
+        </g>
+
+
+
+        <!-- Begin animation segments -->
+        <g x-show="imageIndex < 3">
           <image class="image-layer" width="100%" height="100%" x="-100"
-            :transform="`translate(${layerTransX} ${layerTransY})`"
-            href="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/leaves-only.png" 
-           />
-            <g>
-              <a hx-get="/moments/more">
-                <rect x="925" y="810" width="175px" height="160px" 
-                fill="#FEDA00" opacity=".3"></rect>
-              </a>
-            </g>
-          </svg>
-      </div> <!-- end image-panel-image -->
-
-      <div class="image-panel-image" x-show="imageIndex === 1" 
-        x-transition.opacity.duration.1000ms>
-        <svg 
-          viewBox="0 0 2000 1286" preserveAspectRatio="xMidYMid slice"
-        >
-          <image :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`" 
-          width="100%" height="100%" />
-          <!-- leaves -->
-          <image class="image-layer" width="100%" height="100%"  x="-100"
-            :transform="`translate(${layerTransX} ${layerTransY})`"
-            href="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/leaves-only.png" 
-           />    
-          <!-- smoke    -->
-          <g x-show="smokeIndex === 1"
-            x-transition.opacity.duration.2000ms>
-            <image  width="463" height="313" 
-            :transform="`translate(590 64)`"
-            href="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/smoke1.png" 
-           />   
-          </g>
-          <g x-show="smokeIndex === 2"
-            x-transition.opacity.duration.2000ms>
-            <image  width="427" height="293" 
-            :transform="`translate(590 84)`"
-            href="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/smoke2.png" 
-            />   
-          </g>
-          <g x-show="smokeIndex === 3"
-            x-transition.opacity.duration.2000ms>
-            <image  width="568" height="362" 
-            :transform="`translate(590 15)`"
-            href="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/smoke3.png" 
-            />   
-          </g>
+          :transform="`translate(${layerTransX} ${layerTransY})`"
+          href="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/leaves-only.png" />
+        </g>
 
 
-          <g>
-            <a hx-get="/moments/more">
-              <rect x="625" y="910" width="75px" height="160px" 
-              fill="#FEDA00" opacity=".3"></rect>
-            </a>
-          </g>
-        </svg>
-      </div>
 
-      <div class="image-panel-image" x-show="imageIndex === 2" 
-        x-transition.opacity.duration.1000ms>
-        <svg 
-          viewBox="0 0 2000 1286" preserveAspectRatio="xMidYMid slice"
-        >
-          <image :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`" 
-          width="100%" height="100%" />
-
-          <image class="image-layer" width="100%" height="100%"  x="-100"
-            :transform="`translate(${layerTransX} ${layerTransY})`"
-            href="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/leaves-only.png" 
-           />
-
-          <g>
-            <a hx-get="/moments/more">
-              <rect x="125" y="410" width="125px" height="100px" 
-              fill="#FEDA00" opacity=".3"></rect>
-            </a>
-          </g>
-        </svg>
-      </div>
-
-      <div class="image-panel-image" x-show="imageIndex === 3" 
-        x-transition.opacity.duration.1000ms>
-        <svg 
-          viewBox="0 0 2000 1286" preserveAspectRatio="xMidYMid slice"
-        >
-          <image :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/${images[imageIndex]}.jpg`" 
-          width="100%" height="100%" />
-          <g>
-            <a hx-get="/moments/more">
-              <rect x="325" y="910" width="105px" height="60px" 
-              fill="#FEDA00" opacity=".3"></rect>
-            </a>
-          </g>
-        </svg>
-      </div>
-
+      </svg>
+    </div> <!-- end image panel image -->
 
       <!-- Single dynamic more box -->
       <div class="more-container">
@@ -196,7 +146,7 @@
         </template>
       </div>
 
-    </div> <!-- /image-panel-outer-div -->
+    </div> <!-- /image-panel-fixed -->
   </div><!-- /image-panel -->
 
   <div class="story-frames">
