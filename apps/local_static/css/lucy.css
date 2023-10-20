@@ -385,6 +385,7 @@ nav.moment-options ul li.this-moment {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.75);
   overflow: auto;
   padding: 1em;
+  position: relative;
 }
 
 /* JavaScript assigns this (or .hidden) to modal container */
@@ -394,13 +395,19 @@ nav.moment-options ul li.this-moment {
   left: 0;
   margin: auto;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   position: fixed;/* this positions the modal window relative to viewport, it won't scroll with the page */  
   right: 0;
-  top: 160px;
+  top: 10vh;
   z-index: 100;
-  max-height: 85%;
-  width: 65%;
+  max-height: 75vh;
+  width: 70vw;
+}
+
+.modal-close {
+	position: absolute;
+	top: 10px;
+	right:20px;
 }
 
 .close { 
@@ -425,4 +432,22 @@ nav.moment-options ul li.this-moment {
   
 .close:hover {	
   opacity: 0.3;
+}
+
+.more-content h2, .more-content h4 {
+	margin: 0;
+}
+
+.more-content figure {
+	float: left;
+	margin: 1em 1em 0 0;
+	width: 50%;
+}
+
+.more-content figure img {
+	max-width: 100%;
+}
+.more-content figure figcaption {
+	color: gray;
+	font-size: .8em;
 }
