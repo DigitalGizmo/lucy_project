@@ -73,8 +73,16 @@
         x-transition.opacity.duration.1500ms
         :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/05-lucy-hearth.jpg`" 
           width="100%" height="100%" />
-
         <!-- end sequence of images and hotspots -->
+
+        <!-- Begin animation segments -->
+        <g x-show="imageIndex < 3">
+          <image class="image-layer" width="100%" height="100%" x="-100"
+          :transform="`translate(${layerTransX} ${layerTransY})`"
+          href="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/leaves-only.png" />
+        </g>
+
+        <!-- Begin hotspots - needs to be after/on top of animation full frame "cels" -->
         <g x-show="imageIndex === 0" 
         x-transition.opacity.duration.1500ms>
           <a hx-get="/moments/more">
@@ -90,16 +98,6 @@
             fill="#FEDA00" opacity=".3"></rect>
           </a>
         </g>
-
-
-
-        <!-- Begin animation segments -->
-        <g x-show="imageIndex < 3">
-          <image class="image-layer" width="100%" height="100%" x="-100"
-          :transform="`translate(${layerTransX} ${layerTransY})`"
-          href="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/leaves-only.png" />
-        </g>
-
 
 
       </svg>
