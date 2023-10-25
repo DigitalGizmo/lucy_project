@@ -1,3 +1,6 @@
+let isCaptured = false;
+
+
 htmx.on("htmx:afterSwap", (e) => {
     console.log("inafterSwap, target id: " + e.detail.target.id)
     if (e.detail.target.id == "modal-container") {
@@ -13,3 +16,4 @@ htmx.on("htmx:beforeSwap", (e) => {
         document.getElementById("modal-overlay").classList.add("hidden");
     }
 })
+

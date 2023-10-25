@@ -26,9 +26,17 @@
     ],
     isLoading: true,
     frames: [],
-    layerTransX: 0,
-    layerTransY: 0,
-    smokeIndex: 1
+    leavesTransX: 0,
+    leavesTransY: 0,
+    houseTransY: 0,
+    houseBgTransY: 0,
+    houseBgTransX: 0,
+    houseScale: 1,
+    houseBgScale: 1,
+    houseStartY: 800,
+    isCaptured: false,
+    smokeIndex: 1,
+    count: 0
   }"
   x-init="
     const response = await fetch('/moments/community-frames');
@@ -40,9 +48,22 @@
   scrollNumber = window.pageYOffset,
   // Adding panelHeight to scollNumber make quotient = 1 sooner
   imageIndex = Math.trunc((scrollNumber + panelHeight - 125)/(panelHeight))
-  layerTransX = scrollNumber/4
-  layerTransY = -scrollNumber/7
+  leavesTransX = scrollNumber/4
+  leavesTransY = -scrollNumber/7
   smokeIndex = 1 + Math.trunc((scrollNumber - 135)/250)
+  if (imageIndex === 2 && !isCaptured) {
+    houseStartY = scrollNumber;
+    isCaptured = true;
+    count += 1;
+  }
+  if (houseStartY - scrollNumber < 0) {
+    houseTransY = ((houseStartY - scrollNumber)/2);
+    houseBgTransY = ((houseStartY - scrollNumber)/6);
+    houseBgTransx = 0 + ((houseStartY - scrollNumber)/1);
+    houseScale = 1 - ((houseStartY - scrollNumber)/2000);
+    houseBgScale = 1 - ((houseStartY - scrollNumber)/5000)
+  }
+  
   ">
   <div class="image-panel"> 
     <div class="image-panel-fixed"
@@ -64,25 +85,40 @@
         :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/03-candle-color.jpg`" 
           width="100%" height="100%" />
 
-        <image x-show="imageIndex === 2" 
+        <!-- cutaway house -->
+        <image x-show="imageIndex === 2 || imageIndex === 3" 
         x-transition.opacity.duration.1500ms
+        :transform="`translate(${houseBgTransX} ${houseBgTransY}) scale(${houseBgScale})`"
         :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/04-house-cutaway-color.jpg`" 
           width="100%" height="100%" />
 
+        <!-- leaves -->
+        <image class="image-layer" width="100%" height="100%" 
+        x-show="imageIndex < 4"
+        x-transition.opacity.duration.1500ms
+        :transform="`translate(${leavesTransX} ${leavesTransY})`"
+          href="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/leaves-only.png" />
+
+
+
+        <!-- animation layers need to appear in the appropriate order in this layout -->
+        <!-- house parallax -->
+        <image x-show="imageIndex === 2 || imageIndex === 3"
+          x-transition.opacity.duration.1500ms
+          class="image-layer" width="100%" height="100%" 
+          :transform="`translate(0 ${houseTransY}) scale(${houseScale})`"
+          href="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/1-dark-house-proto.png" />
+
+
         <image x-show="imageIndex === 3" 
         x-transition.opacity.duration.1500ms
-        :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/05-lucy-hearth.jpg`" 
+        :href="`http://lucy-proto.deerfield-ma.org/assets/moments/images/community/lucy-hearth.jpg`" 
           width="100%" height="100%" />
         <!-- end sequence of images and hotspots -->
+        
 
-        <!-- Begin animation segments -->
-        <g x-show="imageIndex < 3">
-          <image class="image-layer" width="100%" height="100%" x="-100"
-          :transform="`translate(${layerTransX} ${layerTransY})`"
-          href="http://lucy-proto.deerfield-ma.org/assets/moments/images/community/leaves-only.png" />
-        </g>
 
-        <!-- Begin hotspots - needs to be after/on top of animation full frame "cels" -->
+        <!-- Begin hotspots - needs to be after (on top of) animation full frame pngs -->
         <g x-show="imageIndex === 0" 
         x-transition.opacity.duration.1500ms>
           <a hx-get="/moments/more">
@@ -106,10 +142,13 @@
       <!-- Single dynamic more box -->
       <div class="more-container">
         <h4 class="more-tab">More</h4>
-        <p><span x-text="smokeIndex"></span> | 
+        <p>
+          <span x-text="imageIndex"></span> |
+          <span x-text="`scale: ${houseScale}`"></span> | 
           <span x-text="scrollNumber"></span> |
-          <span x-text="panelHeight"></span> |
-          <span x-text="isLoading"></span> 
+          <!-- <span x-text="panelHeight"></span> | -->
+          <!-- <span x-text="count"></span> | -->
+          <span x-text="houseStartY">Sart Y</span> 
         </p>
         <h4>More</h4>
         <template x-if="!isLoading">
