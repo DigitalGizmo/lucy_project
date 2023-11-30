@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView, DetailView
+from rest_framework import viewsets
 from .models import Person
+from .serializers import PersonSerializer
 
 class PersonListView(ListView):
     model = Person
@@ -9,3 +11,7 @@ class PersonListView(ListView):
 
 class PersonDetailView(TemplateView):
     template_name = "people/person-model.html"
+
+class PersonViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Person.objects.all().order_by('last_name')
+    serializer_class = PersonSerializer

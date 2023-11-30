@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'apps.people.apps.PeopleConfig',
     'apps.moments.apps.MomentsConfig',
     'apps.sitewide.apps.SitewideConfig',
+    'rest_framework',
     'django_htmx',
     'django.contrib.admin',
     'django.contrib.auth',
