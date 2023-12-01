@@ -10,6 +10,7 @@ class Person(models.Model):
         ('unknown', 'unknown'),
     )
     ENSLAVEMENT_STATUS = (
+        (0,'please select'),
         (1,'enslaved'),
         (2,'enslaved, then free'),
         (3,'always free'),
