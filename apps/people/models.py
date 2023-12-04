@@ -23,7 +23,7 @@ class Person(models.Model):
         (1,'draft'),
         (3,'show')
     )
-    slug = models.CharField(max_length=32, blank=True, default='')
+    slug = models.SlugField(max_length=32, unique=True)
     first_name = models.CharField(max_length=32)
     last_name = models.CharField(max_length=32, blank=True, default='')
     birth_year = models.IntegerField(blank=True, null=True)
@@ -35,6 +35,7 @@ class Person(models.Model):
     gender = models.CharField(default='select', max_length=12, choices=GENDER)
     menu_blurb = models.TextField(blank=True, default='')
     bio = QuillField(blank=True, default='')
+    fake_related = QuillField(blank=True, default='')
     enslavement_status = models.IntegerField(default=0, choices=ENSLAVEMENT_STATUS)
     prod_status = models.IntegerField(default=0, choices=PROD_STATUS)
 
