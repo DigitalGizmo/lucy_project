@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'apps.moments.apps.MomentsConfig',
     'apps.sitewide.apps.SitewideConfig',
     'rest_framework',
+    'django_quill',
     'django_htmx',
     'django.contrib.admin',
     'django.contrib.auth',
