@@ -7,14 +7,15 @@ class PersonAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name')
 
     fields = [
-        'first_name','last_name', 
+        ('slug', 'prod_status'),
+        ('first_name','last_name'),
         ('gender', 'enslavement_status'),
         ('birth_year', 'birth_month', 'birth_day'),
         ('death_year', 'death_month', 'death_day'),
-        'menu_blurb',
-        'prod_status'
+        'menu_blurb', 
+        'bio'
     ]
-    list_display = ('first_name', 'last_name', 'birth_year', 'death_year',
+    list_display = ('slug', 'first_name', 'last_name', 'birth_year', 'death_year',
         'enslavement_status',)
 
 admin.site.register(Person, PersonAdmin)
