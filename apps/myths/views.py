@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from django.views.generic import TemplateView, ListView, DetailView
+from rest_framework import viewsets
+from .models import Myth
+from .serializers import MythSerializer
 
-# Create your views here.
+class MythViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Myth.objects.all()
+    serializer_class = MythSerializer
+    lookup_field = 'slug'
