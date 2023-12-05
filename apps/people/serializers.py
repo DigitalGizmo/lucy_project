@@ -10,3 +10,4 @@ class PersonSerializer(serializers.HyperlinkedModelSerializer):
             'death_year', 'death_month', 'death_day',
             'menu_blurb', 'bio', 'fake_related', 'prod_status'            
         ]
+        lookup_field = 'slug'

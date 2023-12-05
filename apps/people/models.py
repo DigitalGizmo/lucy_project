@@ -41,3 +41,9 @@ class Person(models.Model):
 
     def __str__(self):
         return self.first_name + " " + self.last_name
+    
+class Related(models.Model):
+    # CASCADE - if person is deleted, delete the relateds
+    person = models.ForeignKey('Person', on_delete=models.CASCADE)
+    title = models.CharField(max_length=64)
+    link = models.CharField(max_length=32)
