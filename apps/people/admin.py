@@ -14,9 +14,6 @@ class RelatedInline(admin.StackedInline):
 
 
 class PersonAdmin(admin.ModelAdmin):
-    fields = ['first_name', 'last_name']
-    list_display = ('first_name', 'last_name')
-
     fields = [
         ('slug', 'prod_status'),
         ('first_name','last_name'),
