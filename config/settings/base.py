@@ -34,9 +34,12 @@ ALLOWED_HOSTS = ['lucy-proto.deerfield-ma.org', 'localhost', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.moments.apps.MomentsConfig',
     'apps.evidence.apps.EvidenceConfig',
     'apps.people.apps.PeopleConfig',
-    'apps.moments.apps.MomentsConfig',
+    'apps.topics.apps.TopicsConfig',
+    'apps.myths.apps.MythsConfig',
+    'apps.maps.apps.MapsConfig',
     'apps.sitewide.apps.SitewideConfig',
     'rest_framework',
     'django_quill',
