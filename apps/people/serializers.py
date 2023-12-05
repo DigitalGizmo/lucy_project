@@ -1,8 +1,22 @@
 from rest_framework import serializers
 from .models import Person
 
+class FieldQuillSerializer(serializers.Field):
+    def to_representation(self, value):
+        # Assuming `value` is an instance of your FieldQuill class
+        return {
+            # 'json_string': value.json_string,
+            # 'delta': value.delta,
+            'plain': value.plain,
+            'html': value.html,
+        }
+    
+    def to_internal_value(self, data):
+        pass
+
 class PersonSerializer(serializers.HyperlinkedModelSerializer):
     # relateds = serializers.IDRelatedField(many=True)
+    bio = FieldQuillSerializer()
     class Meta:
         model = Person
         fields = [
