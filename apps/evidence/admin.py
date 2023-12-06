@@ -5,10 +5,12 @@ from .models import EvidenceItem
 
 class EvidenceItemAdmin(admin.ModelAdmin):
     fields = [
-        ('slug', 'item_type'),
-        'title', ('year', 'accession_num'),
+        ('slug', 'prod_status'),
+        ('title', 'item_type'), 
+        ('year', 'accession_num'),
         ('source', 'citation'), 
-        'menu_blurb', 'full_text'
+        'menu_blurb', 'full_text',
+        'notes'
     ]
     list_display = ('slug', 'title', 'menu_blurb')
     formfield_overrides = {

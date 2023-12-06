@@ -21,7 +21,7 @@ class PersonAdmin(admin.ModelAdmin):
         ('birth_year', 'birth_month', 'birth_day'),
         ('death_year', 'death_month', 'death_day'),
         'menu_blurb', 
-        'bio'
+        'bio', 'notes'
     ]
     list_display = ('slug', 'first_name', 'last_name', 'birth_year', 'death_year',
         'enslavement_status',)

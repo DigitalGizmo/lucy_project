@@ -3,8 +3,10 @@ from django_quill.fields import QuillField
 
 class EvidenceItem(models.Model):
     ITEM_TYPE = (
-        ('object','Object'),
-        ('document','Document'),
+        ('manuscript','Manuscripts'),
+        ('printed','Printed material'),
+        ('object','Objects'),
+        ('picture','Pictures and Paintings')
     )
     PROD_STATUS = (
         (0,'hide'),

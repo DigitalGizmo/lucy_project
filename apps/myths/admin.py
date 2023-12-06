@@ -5,9 +5,10 @@ from .models import Myth
 
 class MythAdmin(admin.ModelAdmin):
     fields = [
-        ('slug', 'title'),
+        ('slug', 'prod_status'),
+        'title',
         'menu_blurb', 
-        'full_text'
+        'full_text', 'notes'
     ]
     list_display = ('slug', 'title', 'menu_blurb')
     formfield_overrides = {
