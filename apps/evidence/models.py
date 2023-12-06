@@ -6,7 +6,11 @@ class EvidenceItem(models.Model):
         ('object','Object'),
         ('document','Document'),
     )
-
+    PROD_STATUS = (
+        (0,'hide'),
+        (1,'show'),
+        (2,'active')
+    )    
     slug = models.SlugField(max_length=32, unique=True)
     title = models.CharField(max_length=64)
     menu_blurb = models.TextField(blank=True, default='')
@@ -17,5 +21,7 @@ class EvidenceItem(models.Model):
     source = models.CharField(max_length=128, blank=True, default='')
     citation = models.CharField(max_length=128, blank=True, default='')
     accession_num = models.CharField(max_length=32, blank=True, default='')
+    notes = models.TextField(blank=True, default='')
+    prod_status = models.IntegerField(default=1, choices=PROD_STATUS)
 
 

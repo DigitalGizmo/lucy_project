@@ -19,9 +19,9 @@ class Person(models.Model):
         (5,'not enslaver')
     )
     PROD_STATUS = (
-        (0,'entered'),
-        (1,'draft'),
-        (3,'show')
+        (0,'hide'),
+        (1,'show'),
+        (2,'active')
     )
     slug = models.SlugField(max_length=32, unique=True)
     first_name = models.CharField(max_length=32)
@@ -37,7 +37,8 @@ class Person(models.Model):
     bio = QuillField(blank=True, default='')
     fake_related = QuillField(blank=True, default='')
     enslavement_status = models.IntegerField(default=0, choices=ENSLAVEMENT_STATUS)
-    prod_status = models.IntegerField(default=0, choices=PROD_STATUS)
+    notes = models.TextField(blank=True, default='')
+    prod_status = models.IntegerField(default=1, choices=PROD_STATUS)
 
     def __str__(self):
         return self.first_name + " " + self.last_name
