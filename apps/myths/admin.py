@@ -4,12 +4,19 @@ from django.forms import Textarea
 from .models import Myth
 
 class MythAdmin(admin.ModelAdmin):
-    fields = [
-        ('slug', 'prod_status'),
-        'title',
-        'menu_blurb', 
-        'full_text', 'notes'
+    fieldsets = [
+        (None, {'fields': [
+            ('title', 'slug'),
+            'menu_blurb', 
+            'full_text', 'notes'
+            ]}
+        ),
+        ('Behind the scenes', {'fields': ['prod_status'],
+            'classes': ['collapse']}
+        )
+
     ]
+
     list_display = ('slug', 'title', 'menu_blurb')
     formfield_overrides = {
         # models.CharField: {'widget': TextInput(attrs={'size':'60'})},

@@ -12,16 +12,20 @@ class RelatedInline(admin.StackedInline):
     #     models.TextField: {'widget': Textarea(attrs={'rows':2, 'cols':80})},
     # }
 
-
 class PersonAdmin(admin.ModelAdmin):
-    fields = [
-        ('slug', 'prod_status'),
-        ('first_name','last_name'),
+    fieldsets = [
+        (None, {'fields': [
+            ('first_name','last_name', 'slug'),
         ('gender', 'enslavement_status'),
         ('birth_year', 'birth_month', 'birth_day'),
         ('death_year', 'death_month', 'death_day'),
         'menu_blurb', 
         'bio', 'notes'
+            ]}
+        ),
+        ('Behind the scenes', {'fields': ['prod_status'],
+            'classes': ['collapse']}
+        )
     ]
     list_display = ('slug', 'first_name', 'last_name', 'birth_year', 'death_year',
         'enslavement_status',)
