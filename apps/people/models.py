@@ -45,6 +45,7 @@ class Person(models.Model):
     
 class Related(models.Model):
     # CASCADE - if person is deleted, delete the relateds
-    person = models.ForeignKey('Person', on_delete=models.CASCADE)
+    person = models.ForeignKey('Person', related_name='relateds',
+                on_delete=models.CASCADE)
     title = models.CharField(max_length=64)
     link = models.CharField(max_length=32)

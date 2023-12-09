@@ -1,5 +1,12 @@
 from rest_framework import serializers
-from .models import Person
+from .models import Person, Related
+
+
+# class RelatedSerializer(serializers.HyperlinkedModelSerializer):
+#     class Meta:
+#         model = Related
+#         fields = ['title', 'link']
+#         person = serializers.ReadOnlyField(source='person.slug')
 
 class FieldQuillSerializer(serializers.Field):
     def to_representation(self, value):
@@ -15,7 +22,8 @@ class FieldQuillSerializer(serializers.Field):
         pass
 
 class PersonSerializer(serializers.HyperlinkedModelSerializer):
-    # relateds = serializers.IDRelatedField(many=True)
+    relateds = serializers.PrimaryKeyRelatedField(many=True,
+                queryset=Related.objects.all())
     bio = FieldQuillSerializer()
     class Meta:
         model = Person
@@ -24,6 +32,6 @@ class PersonSerializer(serializers.HyperlinkedModelSerializer):
             'birth_year', 'birth_month', 'birth_day',
             'death_year', 'death_month', 'death_day',
             'menu_blurb', 'bio', 'prod_status',
-            # 'relateds'          
+            'relateds'          
         ]
         lookup_field = 'slug'
