@@ -19,9 +19,9 @@ class Person(models.Model):
         (5,'not enslaver')
     )
     PROD_STATUS = (
-        (0,'hide'),
-        (1,'show'),
-        (2,'active')
+        (0,'background'),
+        (1,'proto-menu'),
+        (2,'proto-detail')
     )
     slug = models.SlugField(max_length=32, unique=True)
     first_name = models.CharField(max_length=32)
