@@ -23,12 +23,11 @@ class PersonAdmin(admin.ModelAdmin):
         'bio', 'notes'
             ]}
         ),
-        ('Behind the scenes', {'fields': ['prod_status'],
-            'classes': ['collapse']}
-        )
+        ('Behind the scenes', {'fields': ['prod_status']})
     ]
     list_display = ('slug', 'first_name', 'last_name', 'birth_year', 'death_year',
-        'enslavement_status',)
+        'enslavement_status', 'prod_status')
+    list_filter  = ['prod_status'] 
     formfield_overrides = {
         # models.CharField: {'widget': TextInput(attrs={'size':'60'})},
         models.TextField: {'widget': Textarea(attrs={'rows':4, 'cols':80})},
