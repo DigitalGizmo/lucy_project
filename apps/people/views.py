@@ -13,7 +13,7 @@ class PersonDetailView(TemplateView):
     template_name = "people/person-model.html"
 
 class PersonViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Person.objects.all().order_by('last_name')
+    queryset = Person.objects.filter(prod_status__gt=0).order_by('first_name')
     serializer_class = PersonSerializer
     lookup_field = 'slug'
 
