@@ -1,5 +1,10 @@
 from rest_framework import serializers
-from .models import EvidenceItem
+from .models import EvidenceItem, Related
+
+class RelatedSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Related
+        fields = ['title', 'link']
 
 class FieldQuillSerializer(serializers.Field):
     def to_representation(self, value):
@@ -13,14 +18,14 @@ class FieldQuillSerializer(serializers.Field):
         pass
 
 class EvidenceItemSerializer(serializers.HyperlinkedModelSerializer):
-    # relateds = serializers.IDRelatedField(many=True)
+    relateds = RelatedSerializer(many=True, read_only=True)
     full_text = FieldQuillSerializer()
     class Meta:
         model = EvidenceItem
         fields = [
             'slug','title', 'menu_blurb', 
             'full_text', 'item_type', 'year',
-            'source', 'citation', 'accession_num'
-            # 'relateds'          
+            'source', 'citation', 'accession_num',
+            'relateds'          
         ]
         lookup_field = 'slug'

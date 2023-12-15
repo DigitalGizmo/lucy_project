@@ -1,5 +1,10 @@
 from rest_framework import serializers
-from .models import Topic
+from .models import Topic, Related
+
+class RelatedSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Related
+        fields = ['title', 'link']
 
 class FieldQuillSerializer(serializers.Field):
     def to_representation(self, value):
@@ -13,12 +18,12 @@ class FieldQuillSerializer(serializers.Field):
         pass
 
 class TopicSerializer(serializers.HyperlinkedModelSerializer):
-    # relateds = serializers.IDRelatedField(many=True)
+    relateds = RelatedSerializer(many=True, read_only=True)
     full_text = FieldQuillSerializer()
     class Meta:
         model = Topic
         fields = [
             'slug','title', 'menu_blurb', 
-            'full_text',
+            'full_text', 'relateds'
         ]
         lookup_field = 'slug'

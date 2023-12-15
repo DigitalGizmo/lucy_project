@@ -6,7 +6,7 @@ from . import views
 app_name="people"
 
 router = routers.DefaultRouter()
-router.register(r'persons', views.PersonViewSet)
+router.register(r'api', views.PersonViewSet)
 
 urlpatterns = [
     # path("", views.PersonListView.as_view(), name="menu"),

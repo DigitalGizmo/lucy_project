@@ -22,8 +22,6 @@ class FieldQuillSerializer(serializers.Field):
         pass
 
 class PersonSerializer(serializers.HyperlinkedModelSerializer):
-    # relateds = serializers.PrimaryKeyRelatedField(many=True,
-    #             queryset=Related.objects.all())
     relateds = RelatedSerializer(many=True, read_only=True)
     
     bio = FieldQuillSerializer()

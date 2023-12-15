@@ -1,7 +1,12 @@
 from django.contrib import admin
 from django.db import models
 from django.forms import Textarea
-from .models import Map
+from .models import Map, Related
+
+class RelatedInline(admin.StackedInline):
+    model = Related
+    extra = 2
+    fields = ['topic', ('title', 'link')]
 
 class MapAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -21,5 +26,6 @@ class MapAdmin(admin.ModelAdmin):
         # models.CharField: {'widget': TextInput(attrs={'size':'60'})},
         models.TextField: {'widget': Textarea(attrs={'rows':4, 'cols':80})},
     }
+    inlines = [RelatedInline]
 
 admin.site.register(Map, MapAdmin)
