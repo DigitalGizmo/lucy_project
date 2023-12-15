@@ -24,6 +24,10 @@ class Person(models.Model):
         (2,'proto-detail')
     )
     slug = models.SlugField(max_length=32, unique=True)
+    bio = QuillField(blank=True, default='')
+    menu_blurb = models.TextField(blank=True, default='')
+    notes = models.TextField(blank=True, default='')
+    prod_status = models.IntegerField(default=1, choices=PROD_STATUS)
     first_name = models.CharField(max_length=32)
     last_name = models.CharField(max_length=32, blank=True, default='')
     birth_year = models.IntegerField(blank=True, null=True)
@@ -33,12 +37,8 @@ class Person(models.Model):
     death_month = models.IntegerField(blank=True, null=True)
     death_day = models.IntegerField(blank=True, null=True)
     gender = models.CharField(default='select', max_length=12, choices=GENDER)
-    menu_blurb = models.TextField(blank=True, default='')
-    bio = QuillField(blank=True, default='')
     fake_related = QuillField(blank=True, default='')
     enslavement_status = models.IntegerField(default=0, choices=ENSLAVEMENT_STATUS)
-    notes = models.TextField(blank=True, default='')
-    prod_status = models.IntegerField(default=1, choices=PROD_STATUS)
 
     def __str__(self):
         return self.first_name + " " + self.last_name

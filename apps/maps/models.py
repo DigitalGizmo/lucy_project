@@ -1,16 +1,15 @@
 from django.db import models
 from django_quill.fields import QuillField
+from apps.sitewide.models import CommonMain
 
-class Map(models.Model):
-    PROD_STATUS = (
-        (0,'hide'),
-        (1,'show'),
-        (2,'active')
-    )    
-    slug = models.SlugField(max_length=32, unique=True)
+class Map(CommonMain):
+    """
+    common fields only
+    """
+
+class Related(models.Model):
+    # CASCADE - if parent is deleted, delete the relateds
+    map = models.ForeignKey('Map', related_name='relateds',
+                on_delete=models.CASCADE)
     title = models.CharField(max_length=64)
-    menu_blurb = models.TextField(blank=True, default='')
-    full_text = QuillField(blank=True, default='')
-    notes = models.TextField(blank=True, default='')
-    prod_status = models.IntegerField(default=1, choices=PROD_STATUS)
-   
+    link = models.CharField(max_length=32)
