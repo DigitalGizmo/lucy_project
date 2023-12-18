@@ -4,6 +4,6 @@ from .models import Map
 from .serializers import MapSerializer
 
 class MapViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Map.objects.all()
+    queryset = Map.objects.filter(prod_status__gt=0)
     serializer_class = MapSerializer
     lookup_field = 'slug'

@@ -14,12 +14,10 @@ class EvidenceItemAdmin(admin.ModelAdmin):
             ('title', 'slug'),
             ('item_type', 'year', 'accession_num'),
             'menu_blurb', 
-            'full_text', 'notes'
+            'full_text', 'source', 'citation','notes'
             ]}
         ),
-        ('Behind the scenes', {'fields': ['prod_status'],
-            'classes': ['collapse']}
-        )
+        ('Behind the scenes', {'fields': ['prod_status']})
     ]
     list_display = ('slug', 'title', 'menu_blurb')
     formfield_overrides = {

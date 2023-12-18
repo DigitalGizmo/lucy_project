@@ -4,6 +4,6 @@ from .models import EvidenceItem
 from .serializers import EvidenceItemSerializer
 
 class EvidenceItemViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = EvidenceItem.objects.all()
+    queryset = EvidenceItem.objects.filter(prod_status__gt=0)
     serializer_class = EvidenceItemSerializer
     lookup_field = 'slug'

@@ -4,6 +4,6 @@ from .models import Topic
 from .serializers import TopicSerializer
 
 class TopicViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Topic.objects.all()
+    queryset = Topic.objects.filter(prod_status__gt=0)
     serializer_class = TopicSerializer
     lookup_field = 'slug'

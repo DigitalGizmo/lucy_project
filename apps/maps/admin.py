@@ -16,9 +16,7 @@ class MapAdmin(admin.ModelAdmin):
             'full_text', 'notes'
             ]}
         ),
-        ('Behind the scenes', {'fields': ['prod_status'],
-            'classes': ['collapse']}
-        )
+        ('Behind the scenes', {'fields': ['prod_status']})
 
     ]
     list_display = ('slug', 'title', 'menu_blurb')

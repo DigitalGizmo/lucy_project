@@ -12,7 +12,7 @@ class RelatedInline(admin.StackedInline):
 class TopicAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {'fields': [
-            ('title', 'slug'),
+            ('title', 'slug', 'theme'),
             'menu_blurb', 
             'full_text', 'notes'
             ]}

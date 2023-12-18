@@ -8,7 +8,7 @@ class Topic(CommonMain):
         (1,'Emancipation'),
         (2,'Another Theme')
     )    
-    theme = models.IntegerField(default=1, choices=THEME)
+    theme = models.IntegerField(default=0, choices=THEME)
 
 class Related(models.Model):
     # CASCADE - if parent is deleted, delete the relateds

@@ -27,7 +27,7 @@ class Person(models.Model):
     bio = QuillField(blank=True, default='')
     menu_blurb = models.TextField(blank=True, default='')
     notes = models.TextField(blank=True, default='')
-    prod_status = models.IntegerField(default=1, choices=PROD_STATUS)
+    prod_status = models.IntegerField(default=0, choices=PROD_STATUS)
     first_name = models.CharField(max_length=32)
     last_name = models.CharField(max_length=32, blank=True, default='')
     birth_year = models.IntegerField(blank=True, null=True)

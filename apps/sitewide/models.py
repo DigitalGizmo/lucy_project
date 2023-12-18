@@ -12,7 +12,7 @@ class CommonMain(models.Model):
     menu_blurb = models.TextField(blank=True, default='')
     full_text = QuillField(blank=True, default='')
     notes = models.TextField(blank=True, default='')
-    prod_status = models.IntegerField(default=1, choices=PROD_STATUS)
+    prod_status = models.IntegerField(default=0, choices=PROD_STATUS)
 
     class Meta:
         abstract = True
