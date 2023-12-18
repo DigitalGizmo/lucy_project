@@ -24,6 +24,6 @@ class TopicSerializer(serializers.HyperlinkedModelSerializer):
         model = Topic
         fields = [
             'slug','title', 'menu_blurb', 
-            'full_text', 'relateds'
+            'full_text', 'relateds', 'prod_status'
         ]
         lookup_field = 'slug'

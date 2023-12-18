@@ -26,6 +26,6 @@ class EvidenceItemSerializer(serializers.HyperlinkedModelSerializer):
             'slug','title', 'menu_blurb', 
             'full_text', 'item_type', 'year',
             'source', 'citation', 'accession_num',
-            'relateds'          
+            'relateds', 'prod_status'        
         ]
         lookup_field = 'slug'
