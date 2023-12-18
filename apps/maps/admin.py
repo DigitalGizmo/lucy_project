@@ -6,7 +6,7 @@ from .models import Map, Related
 class RelatedInline(admin.StackedInline):
     model = Related
     extra = 2
-    fields = ['topic', ('title', 'link')]
+    fields = ['map', ('title', 'link')]
 
 class MapAdmin(admin.ModelAdmin):
     fieldsets = [
