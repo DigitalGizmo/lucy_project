@@ -22,6 +22,7 @@ class EvidenceItemAdmin(admin.ModelAdmin):
         ('Behind the scenes', {'fields': ['prod_status']})
     ]
     list_display = ('slug', 'title', 'year', 'menu_blurb')
+    list_filter  = ['prod_status'] 
     formfield_overrides = {
         # models.CharField: {'widget': TextInput(attrs={'size':'60'})},
         models.TextField: {'widget': Textarea(attrs={'rows':4, 'cols':80})},
