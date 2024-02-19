@@ -20,7 +20,7 @@ class TopicAdmin(admin.ModelAdmin):
         ('Behind the scenes', {'fields': ['prod_status']})
 
     ]
-    list_display = ('slug', 'title', 'menu_blurb')
+    list_display = ('slug', 'title', 'theme', 'menu_blurb')
     list_filter  = ['prod_status'] 
     formfield_overrides = {
         # models.CharField: {'widget': TextInput(attrs={'size':'60'})},
