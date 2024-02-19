@@ -13,7 +13,7 @@ class EvidenceItemAdmin(admin.ModelAdmin):
         (None, {'fields': [
             ('title', 'slug'),
             ('item_type', 'accession_num'),
-            ('year', 'end_year'),
+            ('year', 'end_year', 'is_circa'),
             'menu_blurb', 
             'full_text', 'caption',
             'source', 'citation','notes'

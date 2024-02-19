@@ -24,7 +24,7 @@ class EvidenceItemSerializer(serializers.HyperlinkedModelSerializer):
         model = EvidenceItem
         fields = [
             'slug','title', 'menu_blurb', 'full_text', 
-            'item_type', 'year', 'end_year', 
+            'item_type', 'year', 'end_year', 'is_circa',
             'caption', 'source', 'citation', 'accession_num',
             'relateds', 'prod_status'        
         ]
