@@ -23,9 +23,9 @@ class EvidenceItemSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = EvidenceItem
         fields = [
-            'slug','title', 'menu_blurb', 
-            'full_text', 'item_type', 'year',
-            'source', 'citation', 'accession_num',
+            'slug','title', 'menu_blurb', 'full_text', 
+            'item_type', 'year', 'end_year', 
+            'caption', 'source', 'citation', 'accession_num',
             'relateds', 'prod_status'        
         ]
         lookup_field = 'slug'

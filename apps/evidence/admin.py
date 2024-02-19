@@ -12,14 +12,16 @@ class EvidenceItemAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {'fields': [
             ('title', 'slug'),
-            ('item_type', 'year', 'accession_num'),
+            ('item_type', 'accession_num'),
+            ('year', 'end_year'),
             'menu_blurb', 
-            'full_text', 'source', 'citation','notes'
+            'full_text', 'caption',
+            'source', 'citation','notes'
             ]}
         ),
         ('Behind the scenes', {'fields': ['prod_status']})
     ]
-    list_display = ('slug', 'title', 'menu_blurb')
+    list_display = ('slug', 'title', 'year', 'menu_blurb')
     formfield_overrides = {
         # models.CharField: {'widget': TextInput(attrs={'size':'60'})},
         models.TextField: {'widget': Textarea(attrs={'rows':4, 'cols':80})},
