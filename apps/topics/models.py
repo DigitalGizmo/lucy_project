@@ -5,7 +5,7 @@ from apps.sitewide.models import CommonMain
 class Topic(CommonMain):
     THEME = (
         (0,"Select a Theme"),
-        (1,"EncodingWarningStruggle for Freedom"),
+        (1,"Struggle for Freedom"),
         (2,"A Slave Economy"),
         (3,"The Variety of Enlaved Experience (draft)"),
         (4,"Control and Resistance"),
