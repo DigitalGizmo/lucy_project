@@ -12,7 +12,10 @@ class EvidenceItem(CommonMain):
     item_type = models.CharField(default='select',
         max_length=12, choices=ITEM_TYPE)
     year = models.IntegerField(blank=True, null=True)
+    end_year = models.IntegerField(blank=True, null=True)
+    isCirca = models.BooleanField(default=False)
     source = models.CharField(max_length=128, blank=True, default='')
+    caption = models.TextField(blank=True, default='')
     citation = models.CharField(max_length=128, blank=True, default='')
     accession_num = models.CharField(max_length=32, blank=True, default='')
 
