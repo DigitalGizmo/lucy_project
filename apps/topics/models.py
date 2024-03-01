@@ -14,6 +14,7 @@ class Topic(CommonMain):
         (7,"Myths and Assumptions")
     )    
     theme = models.IntegerField(default=0, choices=THEME)
+    has_video = models.BooleanField(default=False)
 
 class Related(models.Model):
     # CASCADE - if parent is deleted, delete the relateds

@@ -1,0 +1,13 @@
+{% extends 'admin/change_form.html' %}
+{% load static %}
+
+{% block extrastyle %}
+  {{ block.super}}
+  <style>
+    .ql-editor p {
+      padding: 5px;
+      margin: 10px;
+    }
+  </style>
+{% endblock %}
+

@@ -13,6 +13,7 @@ class RelatedInline(admin.StackedInline):
     # }
 
 class PersonAdmin(admin.ModelAdmin):
+    change_form_template = 'people/admin/quill_override.html'
     fieldsets = [
         (None, {'fields': [
             ('first_name','last_name', 'slug'),
@@ -27,7 +28,8 @@ class PersonAdmin(admin.ModelAdmin):
     ]
     list_display = ('slug', 'first_name', 'last_name', 'birth_year', 'death_year',
         'enslavement_status', 'prod_status')
-    list_filter  = ['prod_status'] 
+    list_filter  = ['prod_status']
+    search_fields = ['first_name', 'last_name', 'slug']
     formfield_overrides = {
         # models.CharField: {'widget': TextInput(attrs={'size':'60'})},
         models.TextField: {'widget': Textarea(attrs={'rows':4, 'cols':80})},
