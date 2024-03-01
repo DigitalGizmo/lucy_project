@@ -172,6 +172,8 @@ QUILL_CONFIGS = {
                     'bold', 'italic', 'underline', 'strike', 'blockquote',
                     {'color': []},
                     {'background': []},
+                    { 'list': 'ordered'}, 
+                    { 'list': 'bullet' }
                 ],
                 ['code-block', 'link'],
                 ['clean'],
