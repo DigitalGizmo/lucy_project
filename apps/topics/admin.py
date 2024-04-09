@@ -13,9 +13,9 @@ class TopicAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {'fields': [
             ('title', 'slug'), 
-            ('theme', 'has_video'),
+            ('theme', 'has_image', 'has_video'),
             'menu_blurb', 
-            'full_text', 'notes'
+            'full_text', 'caption', 'notes'
             ]}
         ),
         ('Behind the scenes', {'fields': ['prod_status']})

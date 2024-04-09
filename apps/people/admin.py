@@ -21,7 +21,7 @@ class PersonAdmin(admin.ModelAdmin):
         ('birth_year', 'birth_month', 'birth_day'),
         ('death_year', 'death_month', 'death_day'),
         'menu_blurb', 
-        'bio', 'notes'
+        'bio', ('has_more'), 'more_text', 'notes'
             ]}
         ),
         ('Behind the scenes', {'fields': ['prod_status']})

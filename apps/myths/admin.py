@@ -23,4 +23,4 @@ class MythAdmin(admin.ModelAdmin):
         models.TextField: {'widget': Textarea(attrs={'rows':4, 'cols':80})},
     }
 
-admin.site.register(Myth, MythAdmin)
+# admin.site.register(Myth, MythAdmin)

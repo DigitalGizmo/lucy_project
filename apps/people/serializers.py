@@ -25,13 +25,14 @@ class PersonSerializer(serializers.HyperlinkedModelSerializer):
     relateds = RelatedSerializer(many=True, read_only=True)
     
     bio = FieldQuillSerializer()
+    more_text = FieldQuillSerializer()
     class Meta:
         model = Person
         fields = [
             'slug','first_name', 'last_name', 'gender', 'enslavement_status',
             'birth_year', 'birth_month', 'birth_day',
             'death_year', 'death_month', 'death_day',
-            'menu_blurb', 'bio', 'prod_status',
-            'relateds'          
+            'menu_blurb', 'bio', 'more_text', 'has_more',
+            'prod_status', 'relateds'          
         ]
         lookup_field = 'slug'
