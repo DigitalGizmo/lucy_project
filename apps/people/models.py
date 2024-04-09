@@ -25,6 +25,8 @@ class Person(models.Model):
     )
     slug = models.SlugField(max_length=32, unique=True)
     bio = QuillField(blank=True, default='')
+    more_text = QuillField(blank=True, default='')
+    has_more = models.BooleanField(default=False)
     menu_blurb = models.TextField(blank=True, default='')
     notes = models.TextField(blank=True, default='')
     prod_status = models.IntegerField(default=0, choices=PROD_STATUS)

@@ -15,6 +15,9 @@ class Topic(CommonMain):
     )    
     theme = models.IntegerField(default=0, choices=THEME)
     has_video = models.BooleanField(default=False)
+    has_image = models.BooleanField(default=False)
+    caption = models.TextField(blank=True, default='')
+
 
 class Related(models.Model):
     # CASCADE - if parent is deleted, delete the relateds
