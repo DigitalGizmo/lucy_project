@@ -16,3 +16,22 @@ class CommonMain(models.Model):
 
     class Meta:
         abstract = True
+
+
+class CommonRelated(models.Model):
+    CONTENT_TYPE = (
+        ('select','please select'),
+        ('evidence','evidence'),
+        ('maps','maps'),
+        ('people','people'),
+        ('topics', 'topics')
+    )
+    title = models.CharField(max_length=64)
+    link = models.CharField(blank=True, null=True, max_length=32)
+    content_type = models.CharField(default='select', 
+        max_length=12, choices=CONTENT_TYPE)
+    slug = models.CharField(blank=True, default='', max_length=32)
+
+    class Meta:
+        abstract = True
+

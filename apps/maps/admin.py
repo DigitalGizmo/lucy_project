@@ -20,6 +20,7 @@ class MapAdmin(admin.ModelAdmin):
 
     ]
     list_display = ('slug', 'title', 'menu_blurb')
+    list_filter  = ['prod_status'] 
     formfield_overrides = {
         # models.CharField: {'widget': TextInput(attrs={'size':'60'})},
         models.TextField: {'widget': Textarea(attrs={'rows':4, 'cols':80})},

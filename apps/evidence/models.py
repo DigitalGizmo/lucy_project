@@ -1,6 +1,6 @@
 from django.db import models
 from django_quill.fields import QuillField
-from apps.sitewide.models import CommonMain
+from apps.sitewide.models import CommonMain, CommonRelated
 
 class EvidenceItem(CommonMain):
     ITEM_TYPE = (
@@ -19,9 +19,7 @@ class EvidenceItem(CommonMain):
     citation = models.CharField(max_length=128, blank=True, default='')
     accession_num = models.CharField(max_length=32, blank=True, default='')
 
-class Related(models.Model):
+class Related(CommonRelated):
     # CASCADE - if parent is deleted, delete the relateds
     evidence_item = models.ForeignKey('EvidenceItem', related_name='relateds',
                 on_delete=models.CASCADE)
-    title = models.CharField(max_length=64)
-    link = models.CharField(max_length=32)

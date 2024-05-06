@@ -1,15 +1,13 @@
 from django.db import models
 from django_quill.fields import QuillField
-from apps.sitewide.models import CommonMain
+from apps.sitewide.models import CommonMain, CommonRelated
 
 class Map(CommonMain):
     """
     common fields only
     """
 
-class Related(models.Model):
+class Related(CommonRelated):
     # CASCADE - if parent is deleted, delete the relateds
     map = models.ForeignKey('Map', related_name='relateds',
                 on_delete=models.CASCADE)
-    title = models.CharField(max_length=64)
-    link = models.CharField(max_length=32)
