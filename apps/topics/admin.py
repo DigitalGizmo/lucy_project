@@ -7,7 +7,7 @@ from .models import Topic, Related
 class RelatedInline(admin.StackedInline):
     model = Related
     extra = 2
-    fields = ['topic', ('title', 'link')]
+    fields = ['topic', ('title', 'content_type', 'slug')]
 
 class TopicAdmin(admin.ModelAdmin):
     fieldsets = [

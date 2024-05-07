@@ -6,11 +6,7 @@ from .models import Person, Related
 class RelatedInline(admin.StackedInline):
     model = Related
     extra = 2
-    fields = ['person', ('title', 'link')]
-    # formfield_overrides = {
-    #     # models.CharField: {'widget': TextInput(attrs={'size':'60'})},
-    #     models.TextField: {'widget': Textarea(attrs={'rows':2, 'cols':80})},
-    # }
+    fields = ['person', ('title', 'content_type', 'slug')]
 
 class PersonAdmin(admin.ModelAdmin):
     change_form_template = 'people/admin/quill_override.html'

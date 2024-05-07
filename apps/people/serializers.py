@@ -5,7 +5,7 @@ from .models import Person, Related
 class RelatedSerializer(serializers.ModelSerializer):
     class Meta:
         model = Related
-        fields = ['title', 'link']
+        fields = ['title', 'content_type', 'slug', 'link']
         # person = serializers.ReadOnlyField(source='person.slug')
 
 class FieldQuillSerializer(serializers.Field):

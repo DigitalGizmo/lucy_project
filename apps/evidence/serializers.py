@@ -4,7 +4,7 @@ from .models import EvidenceItem, Related
 class RelatedSerializer(serializers.ModelSerializer):
     class Meta:
         model = Related
-        fields = ['title', 'link']
+        fields = ['title', 'content_type', 'slug', 'link']
 
 class FieldQuillSerializer(serializers.Field):
     def to_representation(self, value):
