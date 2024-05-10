@@ -18,6 +18,7 @@ class EvidenceItem(CommonMain):
     caption = models.TextField(blank=True, default='')
     citation = models.CharField(max_length=128, blank=True, default='')
     accession_num = models.CharField(max_length=32, blank=True, default='')
+    transcript = models.TextField(blank=True, default='')
 
 class Related(CommonRelated):
     # CASCADE - if parent is deleted, delete the relateds
