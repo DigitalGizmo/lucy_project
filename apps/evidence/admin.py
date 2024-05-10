@@ -15,7 +15,7 @@ class EvidenceItemAdmin(admin.ModelAdmin):
             ('item_type', 'accession_num'),
             ('year', 'end_year', 'is_circa'),
             'menu_blurb', 
-            'full_text', 'caption',
+            'full_text', 'transcript', 'caption',
             ('source', 'citation'),
             'notes'
             ]}
