@@ -65,6 +65,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
+    "https://lucyterryprince.deerfield-ma.org/",
     "https://lucy-app-b8qj5.ondigitalocean.app/",
     "http://127.0.0.1:8000/",
     "https://lucy-proto.deerfield-ma.org",
