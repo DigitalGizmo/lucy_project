@@ -34,10 +34,14 @@ class Person(models.Model):
     last_name = models.CharField(max_length=32, blank=True, default='')
     birth_year = models.IntegerField(blank=True, null=True)
     birth_month = models.IntegerField(blank=True, null=True)
+    birth_text = models.CharField(max_length=24, blank=True, 
+        default='', help_text='Only if exact year unknown')
     birth_day = models.IntegerField(blank=True, null=True)
     death_year = models.IntegerField(blank=True, null=True)
     death_month = models.IntegerField(blank=True, null=True)
     death_day = models.IntegerField(blank=True, null=True)
+    death_text = models.CharField(max_length=24, blank=True, 
+        default='', help_text='Only if exact year unknown')
     gender = models.CharField(default='select', max_length=12, choices=GENDER)
     fake_related = QuillField(blank=True, default='')
     enslavement_status = models.IntegerField(default=0, choices=ENSLAVEMENT_STATUS)
