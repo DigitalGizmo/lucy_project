@@ -14,8 +14,8 @@ class PersonAdmin(admin.ModelAdmin):
         (None, {'fields': [
             ('first_name','last_name', 'slug'),
         ('gender', 'enslavement_status'),
-        ('birth_year', 'birth_month', 'birth_day'),
-        ('death_year', 'death_month', 'death_day'),
+        ('birth_year', 'birth_month', 'birth_day', 'birth_text'),
+        ('death_year', 'death_month', 'death_day', 'death_text'),
         'menu_blurb', 
         'bio', ('has_more'), 'more_text', 'notes'
             ]}

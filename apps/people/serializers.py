@@ -30,8 +30,8 @@ class PersonSerializer(serializers.HyperlinkedModelSerializer):
         model = Person
         fields = [
             'slug','first_name', 'last_name', 'gender', 'enslavement_status',
-            'birth_year', 'birth_month', 'birth_day',
-            'death_year', 'death_month', 'death_day',
+            'birth_year', 'birth_month', 'birth_day', 'birth_text',
+            'death_year', 'death_month', 'death_day', 'death_text',
             'menu_blurb', 'bio', 'more_text', 'has_more',
             'prod_status', 'relateds'          
         ]
