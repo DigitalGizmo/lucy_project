@@ -6,6 +6,8 @@ class Map(CommonMain):
     """
     common fields only
     """
+    class Meta:
+        ordering = ['title']
 
 class Related(CommonRelated):
     # CASCADE - if parent is deleted, delete the relateds

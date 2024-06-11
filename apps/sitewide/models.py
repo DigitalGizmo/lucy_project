@@ -13,7 +13,8 @@ class CommonMain(models.Model):
     full_text = QuillField(blank=True, default='')
     notes = models.TextField(blank=True, default='')
     prod_status = models.IntegerField(default=0, choices=PROD_STATUS)
-
+    ordinal = models.IntegerField(default=99)
+    
     class Meta:
         abstract = True
 
